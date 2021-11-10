@@ -1,0 +1,14 @@
+.reg-area {
+    background-color: #F5F5F5;
+}
+.form-container {
+    max-width: 570px;
+    padding: 0 40px;
+    border: 2px solid #E5E5E5;
+    border-radius: 4px;
+}
+.form-container-ext {
+    max-width: 570px;
+    padding: 0 40px;
+    border-radius: 4px;
+}

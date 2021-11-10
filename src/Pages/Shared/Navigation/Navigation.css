@@ -1,0 +1,31 @@
+.navbar {
+    padding: 0;
+    background-color: #E5E5E5;
+}
+.navbar-nav a {
+    font-size: 18px;
+    font-weight: 400;
+    color: blueviolet;
+    text-decoration: none;
+    padding: 8px 12px;
+}
+.navbar-nav a:hover {
+    color: blue;
+    /* background-color: #eee; */
+}
+.user-icon {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #808080;
+    padding: 1px;
+    border-radius: 50%;
+}
+.btn-jer {
+    border: none;
+    color: #FFF;
+    background-color: #F63E7B;
+}
+.btn-jer:hover {
+    background-color: #F63E7B;
+    opacity: 0.85;
+}
