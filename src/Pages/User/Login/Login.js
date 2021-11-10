@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import './Login.css';
 
+import logo from '../../../images/logo.png';
+
 const Login = () => {
     const [userData, setUserData] = useState({});
     const { user, authError, loading, loginWithEmailPassword } = useAuth();
@@ -24,7 +26,7 @@ const Login = () => {
     };
 
     return (
-        <div className="py-5 text-center login-area">
+        <div className="bg-light py-5 text-center login-area">
             <div className="text-center">
                 {
                     user?.email && <Alert variant="success}">
@@ -40,9 +42,9 @@ const Login = () => {
             </div>
 
             {
-                !loading && <Container className="my-5">
+                !loading && <Container className="">
                     <div className="my-5">
-                        <img src="" alt="logo" style={{ width: 'auto', height: '96px', padding: '4px' }} />
+                        <img src={logo} alt="logo" style={{ width: 'auto', height: '96px', padding: '4px' }} />
                     </div>
 
                     <div className="" style={{ maxWidth: '520px', margin: '0 auto' }}>
@@ -73,7 +75,7 @@ const Login = () => {
 
                             <div className="d-grid gap-2">
                                 <Button
-                                    className="btn-jer"
+                                    className="btn-fvs"
                                     type="submit"
                                     variant="secondary"
                                     size="lg">
@@ -84,8 +86,6 @@ const Login = () => {
                     </div>
 
                     <div className="my-4">
-                        <p>or</p>
-
                         {/* <Button
                             onClick={signInWithGoogle}
                             className="my-3 login-btn"

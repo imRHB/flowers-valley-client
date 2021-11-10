@@ -1,0 +1,11 @@
+.not-found {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.red-url:hover {
+    text-decoration: none;
+    color: #000080;
+    background-color: #DDF;
+}

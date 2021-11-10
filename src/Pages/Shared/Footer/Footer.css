@@ -1,0 +1,19 @@
+.footer-area {
+    color: #FFF;
+    background-color: #2C3E50;
+}
+h4 {
+    color: #87CEFA;
+}
+.nav a {
+    text-decoration: none;
+    color: #ADD8E6;
+}
+.nav a:hover {
+    color: #FFF;
+}
+.nav-link {
+    font-size: 28px;
+    margin-right: 16px;
+    padding: 0;
+}

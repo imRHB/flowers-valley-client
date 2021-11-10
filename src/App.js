@@ -2,7 +2,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
+import NotFound from './Pages/Error/NotFound/NotFound';
 import Home from './Pages/Landing/Home/Home';
+import Footer from './Pages/Shared/Footer/Footer';
 import Navigation from './Pages/Shared/Navigation/Navigation';
 import Login from './Pages/User/Login/Login';
 import Registration from './Pages/User/Registration/Registration';
@@ -20,6 +22,12 @@ function App() {
             <Route path="/home">
               <Home></Home>
             </Route>
+            <Route path="/flowers">
+              <Home></Home>
+            </Route>
+            <Route path="/occasions">
+              <Home></Home>
+            </Route>
 
             <Route path="/login">
               <Login></Login>
@@ -27,7 +35,12 @@ function App() {
             <Route path="/register">
               <Registration></Registration>
             </Route>
+
+            <Route path="*">
+              <NotFound></NotFound>
+            </Route>
           </Switch>
+          <Footer></Footer>
         </Router>
       </AuthProvider>
     </div>

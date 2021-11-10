@@ -30,7 +30,7 @@ const Registration = () => {
     };
 
     return (
-        <div className="py-5 reg-area">
+        <div className="py-5 bg-light reg-area">
             <div className="text-center">
                 {
                     user?.email && <Alert variant="success}">
@@ -107,7 +107,7 @@ const Registration = () => {
 
                         <div className="d-grid gap-2">
                             <Button
-                                className="btn-jer"
+                                className="btn-fvs"
                                 type="submit"
                                 variant="secondary"
                                 size="lg">
@@ -142,9 +142,9 @@ const Registration = () => {
                 !loading && <Container
                     className="text-center my-5 form-container-ext"
                 >
-                    <div className="">
+                    {/* <div className="">
                         <p>- or -</p>
-                    </div>
+                    </div> */}
                     {/* <Button
                         onClick={signInWithGoogle}
                         className="my-2 login-btn"

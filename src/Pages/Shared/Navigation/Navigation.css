@@ -20,12 +20,12 @@
     padding: 1px;
     border-radius: 50%;
 }
-.btn-jer {
+.btn-fvs {
     border: none;
     color: #FFF;
     background-color: #F63E7B;
 }
-.btn-jer:hover {
+.btn-fvs:hover {
     background-color: #F63E7B;
     opacity: 0.85;
 }

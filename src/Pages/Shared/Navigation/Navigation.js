@@ -5,6 +5,8 @@ import { NavLink } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import './Navigation.css';
 
+import logo from '../../../images/logo.png';
+
 const Navigation = () => {
     const { user, logout } = useAuth();
 
@@ -18,12 +20,13 @@ const Navigation = () => {
         <Navbar>
             <Container className="d-inline">
                 <div className="d-flex align-items-center justify-content-between">
-                    <img src="" alt="" style={{ width: 'auto', height: '56px', padding: '4px' }} />
+                    <img src={logo} alt="" style={{ width: 'auto', height: '56px', padding: '4px' }} />
 
                     <div className="d-flex">
                         <Nav className="">
                             <NavLink to="/home">Home</NavLink>
-                            <NavLink to="/services">Services</NavLink>
+                            <NavLink to="/flowers">Flowers</NavLink>
+                            <NavLink to="/occasions">Occasions</NavLink>
                             <NavLink to="/team">Our Team</NavLink>
                             <NavLink to="/contact">Contact Us</NavLink>
                             {
@@ -34,10 +37,10 @@ const Navigation = () => {
                         {
                             user?.email ? <Button
                                 onClick={logout}
-                                variant="danger" className="ms-2 btn-jer">Logout</Button>
+                                variant="danger" className="ms-2 btn-fvs">Logout</Button>
                                 :
                                 <Button
-                                    onClick={handleLogin} variant="danger" className="ms-2 btn-jer"
+                                    onClick={handleLogin} variant="danger" className="ms-2 btn-fvs"
                                 >Login</Button>
                         }
                     </div>

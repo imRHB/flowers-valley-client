@@ -1,10 +1,10 @@
 import React from 'react';
+import Banner from '../Banner/Banner';
 
 const Home = () => {
     return (
-        <div className="container my-5">
-            <h1>Welcome from Flowers Valley</h1>
-            <h4>React Bootstrap and React Router DOM</h4>
+        <div className="">
+            <Banner></Banner>
         </div>
     );
 };
