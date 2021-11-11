@@ -44,10 +44,10 @@ const Footer = () => {
                             <h4 className="fw-bold">Explore</h4>
                             <Nav className="flex-column">
                                 <Link to="/home">Home</Link>
-                                <Link to="/flowers">Flowers</Link>
+                                <Link to="/rose-bouquet">Rose Bouquet</Link>
                                 <Link to="/occasion">Occasions</Link>
-                                <Link to="#">Terms Conditions</Link>
-                                <Link to="#">Submit Listing</Link>
+                                <Link to="/contact">Contact Us</Link>
+                                <Link to="/register">Register</Link>
                             </Nav>
                         </div>
                     </Col>

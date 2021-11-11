@@ -8,7 +8,23 @@ const ManageOrders = () => {
         fetch('http://localhost:5000/orders')
             .then(res => res.json())
             .then(data => setOrders(data));
-    }, []);
+    }, [orders]);
+
+    const handleDeleteOrder = bqId => {
+        const deleteConfirmation = window.confirm('Do you want to delete the order?');
+
+        if (deleteConfirmation) {
+            const bouquetUri = `http://localhost:5000/orders/${bqId}`;
+            fetch(bouquetUri, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    alert('Order deleted successfully.');
+                })
+        }
+
+    };
 
     return (
         <div className="my-5">
@@ -36,7 +52,7 @@ const ManageOrders = () => {
                                 <td>{order.userName}</td>
                                 <td>{order.userEmail}</td>
                                 <td>Pending</td>
-                                <td><Button variant="success" size="sm">APPROVE</Button> <Button variant="danger" size="sm">DELETE</Button></td>
+                                <td><Button variant="success" size="sm">APPROVE</Button> <Button onClick={() => handleDeleteOrder(order._id)} variant="danger" size="sm">DELETE</Button></td>
                             </tr>)
                         }
                     </tbody>
