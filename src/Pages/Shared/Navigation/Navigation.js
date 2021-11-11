@@ -17,7 +17,7 @@ const Navigation = () => {
     };
 
     return (
-        <Navbar>
+        <Navbar className="bg-light">
             <Container className="d-inline">
                 <div className="d-flex align-items-center justify-content-between">
                     <img src={logo} alt="" style={{ width: 'auto', height: '56px', padding: '4px' }} />
@@ -27,7 +27,6 @@ const Navigation = () => {
                             <NavLink to="/home">Home</NavLink>
                             <NavLink to="/rose-bouquet">Rose Bouquet</NavLink>
                             <NavLink to="/occasion">Occasion</NavLink>
-                            <NavLink to="/team">Our Team</NavLink>
                             <NavLink to="/contact">Contact Us</NavLink>
                             {
                                 user?.email && <NavLink to="/dashboard">Dashboard</NavLink>

@@ -29,16 +29,16 @@ function App() {
             <Route exact path="/rose-bouquet">
               <RoseBouquets></RoseBouquets>
             </Route>
-            <Route path="/rose-bouquet/:bqId">
+            <PrivateRoute path="/rose-bouquet/:bqId">
               <BouquetDetails></BouquetDetails>
-            </Route>
-            <PrivateRoute path="/occasion">
-              <Occasions></Occasions>
             </PrivateRoute>
-
-            <Route path="/dashboard">
-
+            <Route path="/occasion">
+              <Occasions></Occasions>
             </Route>
+
+            <PrivateRoute path="/dashboard">
+
+            </PrivateRoute>
             <Route path="/my-order">
 
             </Route>

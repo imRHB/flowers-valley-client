@@ -9,13 +9,12 @@ const Registration = () => {
 
     const { user, authError, loading, registerWithEmailPassword } = useAuth();
 
-    const handleOnChange = e => {
+    const handleOnBlur = e => {
         const field = e.target.name;
         const value = e.target.value;
         const newUserData = { ...userData };
         newUserData[field] = value;
         setUserData(newUserData);
-        console.log(userData);
     };
 
     const handleRegistration = e => {
@@ -77,7 +76,7 @@ const Registration = () => {
                         >
                             <Form.Control
                                 name="email"
-                                onChange={handleOnChange}
+                                onBlur={handleOnBlur}
                                 type="email"
                                 placeholder="Email Address" />
                         </FloatingLabel>
@@ -88,7 +87,7 @@ const Registration = () => {
                         >
                             <Form.Control
                                 name="password"
-                                onChange={handleOnChange}
+                                onBlur={handleOnBlur}
                                 type="password"
                                 placeholder="Password" />
                         </FloatingLabel>
@@ -100,7 +99,7 @@ const Registration = () => {
                         >
                             <Form.Control
                                 name="confirmPassword"
-                                onChange={handleOnChange}
+                                onBlur={handleOnBlur}
                                 type="password"
                                 placeholder="Confirm Password" />
                         </FloatingLabel>
