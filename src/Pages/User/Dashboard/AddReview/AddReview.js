@@ -19,7 +19,7 @@ const AddReview = () => {
             .then(result => {
 
             });
-        console.log(data);
+
         alert('Your review added successfully');
         reset();
     };
@@ -37,6 +37,8 @@ const AddReview = () => {
 
                             <form onSubmit={handleSubmit(onSubmit)} className="pb-4 add-package-form">
                                 <input {...register("name", { required: true })} defaultValue={user.displayName} readOnly />
+
+                                <input {...register("email", { required: true })} defaultValue={user.email} readOnly />
 
                                 <textarea {...register("comment", { required: true })} placeholder="Your comment" />
 
