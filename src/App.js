@@ -9,6 +9,11 @@ import Home from './Pages/Landing/Home/Home';
 import Occasions from './Pages/Occasions/Occasions/Occasions';
 import Footer from './Pages/Shared/Footer/Footer';
 import Navigation from './Pages/Shared/Navigation/Navigation';
+import AddProduct from './Pages/User/Dashboard/AddProduct/AddProduct';
+import AddReview from './Pages/User/Dashboard/AddReview/AddReview';
+import Dashboard from './Pages/User/Dashboard/Dashboard/Dashboard';
+import MyOrder from './Pages/User/Dashboard/MyOrder/MyOrder';
+import Payment from './Pages/User/Dashboard/Payment/Payment';
 import Login from './Pages/User/Login/Login';
 import PrivateRoute from './Pages/User/PrivateRoute/PrivateRoute';
 import Registration from './Pages/User/Registration/Registration';
@@ -37,16 +42,19 @@ function App() {
             </Route>
 
             <PrivateRoute path="/dashboard">
-
+              <Dashboard></Dashboard>
             </PrivateRoute>
             <Route path="/my-order">
-
+              <MyOrder></MyOrder>
             </Route>
             <Route path="/payment">
-
+              <Payment></Payment>
             </Route>
             <Route path="/add-product">
-
+              <AddProduct></AddProduct>
+            </Route>
+            <Route path="/add-review">
+              <AddReview></AddReview>
             </Route>
 
             <Route path="/login">

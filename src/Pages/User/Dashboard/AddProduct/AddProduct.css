@@ -1,0 +1,11 @@
+.add-package-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+form input, textarea {
+    width: 360px;
+    margin: 8px;
+    padding: 4px;
+}

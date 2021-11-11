@@ -27,7 +27,7 @@ const Registration = () => {
             return;
         }
 
-        registerWithEmailPassword(userData.email, userData.password, history);
+        registerWithEmailPassword(userData.name, userData.email, userData.password, history);
     };
 
     return (
@@ -53,15 +53,20 @@ const Registration = () => {
                     <Form
                         onSubmit={handleRegistration}
                         className="mx-auto">
-                        {/* 
-                    <FloatingLabel
-                        controlId="floatingInput"
-                        label="First Name"
-                        className="mb-3"
-                    >
-                        <Form.Control type="text" placeholder="First Name" />
-                    </FloatingLabel>
 
+                        <FloatingLabel
+                            controlId="floatingInput"
+                            label="Name"
+                            className="mb-3"
+                        >
+                            <Form.Control
+                                name="name"
+                                onBlur={handleOnBlur}
+                                type="text"
+                                placeholder="Name" />
+                        </FloatingLabel>
+
+                        {/* 
                     <FloatingLabel
                         controlId="floatingInput"
                         label="Last Name"

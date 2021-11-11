@@ -1,9 +1,18 @@
 import React from 'react';
+import { Container, Nav } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 
 const Dashboard = () => {
     return (
-        <div>
-
+        <div className="py-5 bg-dark">
+            <Container>
+                <Nav className="flex-column">
+                    <NavLink to="/my-order">My Order</NavLink>
+                    <NavLink to="/payment">Payment</NavLink>
+                    <NavLink to="/add-review">Add Review</NavLink>
+                    <NavLink to="/add-product">Add Product</NavLink>
+                </Nav>
+            </Container>
         </div>
     );
 };

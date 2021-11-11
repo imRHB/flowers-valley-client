@@ -33,7 +33,7 @@ const Login = () => {
             <div className="text-center">
                 {
                     user?.email && <Alert variant="success}">
-                        Logged in successfully with {user.email}.
+                        Logged in successfully with {user.email}
                     </Alert>
                 }
 
