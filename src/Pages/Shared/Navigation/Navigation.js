@@ -25,7 +25,7 @@ const Navigation = () => {
                     <div className="d-flex">
                         <Nav className="">
                             <NavLink to="/home">Home</NavLink>
-                            <NavLink to="/flowers">Flowers</NavLink>
+                            <NavLink to="/rose-bouquet">Rose Bouquet</NavLink>
                             <NavLink to="/occasion">Occasion</NavLink>
                             <NavLink to="/team">Our Team</NavLink>
                             <NavLink to="/contact">Contact Us</NavLink>

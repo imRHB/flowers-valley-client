@@ -1,8 +1,8 @@
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
 
-const Rose = (props) => {
-    const { name, img, description, price } = props.rose;
+const RoseBouquet = (props) => {
+    const { name, img, description, price } = props.bouquet;
 
     return (
         <Col>
@@ -31,4 +31,4 @@ const Rose = (props) => {
     );
 };
 
-export default Rose;
+export default RoseBouquet;

@@ -2,8 +2,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
+import RoseBouquets from './Pages/Bouquet/RoseBouquets/RoseBouquets';
 import NotFound from './Pages/Error/NotFound/NotFound';
-import Roses from './Pages/Flowers/Roses/Roses';
 import Home from './Pages/Landing/Home/Home';
 import Occasion from './Pages/Occasion/Occasion';
 import Footer from './Pages/Shared/Footer/Footer';
@@ -24,11 +24,24 @@ function App() {
             <Route path="/home">
               <Home></Home>
             </Route>
-            <Route path="/flowers">
-              <Roses></Roses>
+            <Route path="/rose-bouquet">
+              <RoseBouquets></RoseBouquets>
             </Route>
             <Route path="/occasion">
               <Occasion></Occasion>
+            </Route>
+
+            <Route path="/dashboard">
+
+            </Route>
+            <Route path="/my-order">
+
+            </Route>
+            <Route path="/payment">
+
+            </Route>
+            <Route path="/add-product">
+
             </Route>
 
             <Route path="/login">
