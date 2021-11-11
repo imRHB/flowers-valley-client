@@ -45,7 +45,7 @@ const Footer = () => {
                             <Nav className="flex-column">
                                 <Link to="/home">Home</Link>
                                 <Link to="/flowers">Flowers</Link>
-                                <Link to="/occasions">Occasions</Link>
+                                <Link to="/occasion">Occasions</Link>
                                 <Link to="#">Terms Conditions</Link>
                                 <Link to="#">Submit Listing</Link>
                             </Nav>

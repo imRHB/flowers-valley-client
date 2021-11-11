@@ -3,7 +3,9 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
 import NotFound from './Pages/Error/NotFound/NotFound';
+import Roses from './Pages/Flowers/Roses/Roses';
 import Home from './Pages/Landing/Home/Home';
+import Occasion from './Pages/Occasion/Occasion';
 import Footer from './Pages/Shared/Footer/Footer';
 import Navigation from './Pages/Shared/Navigation/Navigation';
 import Login from './Pages/User/Login/Login';
@@ -23,10 +25,10 @@ function App() {
               <Home></Home>
             </Route>
             <Route path="/flowers">
-              <Home></Home>
+              <Roses></Roses>
             </Route>
-            <Route path="/occasions">
-              <Home></Home>
+            <Route path="/occasion">
+              <Occasion></Occasion>
             </Route>
 
             <Route path="/login">
