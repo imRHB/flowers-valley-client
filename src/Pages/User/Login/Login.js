@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Alert, Button, Container, FloatingLabel, Form, Spinner } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import './Login.css';
 
@@ -9,6 +9,9 @@ import logo from '../../../images/logo.png';
 const Login = () => {
     const [userData, setUserData] = useState({});
     const { user, authError, loading, loginWithEmailPassword } = useAuth();
+
+    const location = useLocation();
+    const history = useHistory();
 
     const handleOnChange = e => {
         const field = e.target.name;
@@ -22,7 +25,7 @@ const Login = () => {
     const handleLogin = e => {
         e.preventDefault();
 
-        loginWithEmailPassword(userData.email, userData.password);
+        loginWithEmailPassword(userData.email, userData.password, location, history);
     };
 
     return (

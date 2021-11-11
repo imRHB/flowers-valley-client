@@ -27,12 +27,14 @@ const useFirebase = () => {
             })
     };
 
-    const loginWithEmailPassword = (email, password) => {
+    const loginWithEmailPassword = (email, password, location, history) => {
         setLoading(true);
 
         signInWithEmailAndPassword(auth, email, password)
             .then(result => {
                 setUser(result.user);
+                const destination = location?.state?.from || '/';
+                history.replace(destination);
                 setAuthError('');
             })
             .catch(error => {

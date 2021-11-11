@@ -10,6 +10,7 @@ import Occasions from './Pages/Occasions/Occasions/Occasions';
 import Footer from './Pages/Shared/Footer/Footer';
 import Navigation from './Pages/Shared/Navigation/Navigation';
 import Login from './Pages/User/Login/Login';
+import PrivateRoute from './Pages/User/PrivateRoute/PrivateRoute';
 import Registration from './Pages/User/Registration/Registration';
 
 function App() {
@@ -31,9 +32,9 @@ function App() {
             <Route path="/rose-bouquet/:bqId">
               <BouquetDetails></BouquetDetails>
             </Route>
-            <Route path="/occasion">
+            <PrivateRoute path="/occasion">
               <Occasions></Occasions>
-            </Route>
+            </PrivateRoute>
 
             <Route path="/dashboard">
 
