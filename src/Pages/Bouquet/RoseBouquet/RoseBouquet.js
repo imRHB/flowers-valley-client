@@ -7,8 +7,8 @@ const RoseBouquet = (props) => {
 
     return (
         <Col>
-            <Card className="h-100 rounded-3">
-                <Card.Img variant="top" src={img} />
+            <Card className="h-100 rounded-3 text-center">
+                <Card.Img variant="top" src={img} style={{ width: '75%', margin: '0 auto' }} className="p-3" />
                 <Card.Body>
                     <Card.Title>{name}</Card.Title>
                     <Card.Text>
