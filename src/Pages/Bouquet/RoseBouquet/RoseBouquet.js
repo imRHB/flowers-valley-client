@@ -17,15 +17,18 @@ const RoseBouquet = (props) => {
                     <Card.Text>
                         <div className="d-flex justify-content-between fs-3 fw-bold">
                             <p className="text-info">${price}</p>
-                        </div>
-                    </Card.Text>
-                    <Card.Text>
-                        <div className="d-flex justify-content-between">
                             <Link to={`/rose-bouquet/${_id}`}>
                                 <button className="btn btn-outline-secondary">Details</button>
                             </Link>
                         </div>
                     </Card.Text>
+                    {/* <Card.Text>
+                        <div className="d-flex justify-content-between">
+                            <Link to={`/rose-bouquet/${_id}`}>
+                                <button className="btn btn-outline-secondary">Details</button>
+                            </Link>
+                        </div>
+                    </Card.Text> */}
                 </Card.Body>
             </Card>
         </Col>

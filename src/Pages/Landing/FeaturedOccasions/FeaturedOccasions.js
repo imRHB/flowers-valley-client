@@ -21,7 +21,7 @@ const FeaturedOccasions = () => {
     return (
         <div className="my-5 text-center">
             <Container>
-                <h3 className="fw-bold my-3">Choose Bouque on Different <span className="text-danger">Occasion</span></h3>
+                <h3 className="fw-bold my-3">Choose Bouquet on Different <span className="text-danger">Occasion</span></h3>
 
                 <div className="my-5">
                     <Row xs={1} sm={1} md={2} lg={3} xl={3} className="g-5">

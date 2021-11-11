@@ -1,0 +1,8 @@
+.testimonial-card {
+    transition: 0.4s;
+}
+.testimonial-card:hover {
+    box-shadow: 0 0 48px 8px rgba(0, 0, 0, 0.08);
+    color: #fff;
+    background-color: #F63E7B;
+}
