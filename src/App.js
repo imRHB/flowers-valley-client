@@ -12,6 +12,7 @@ import Navigation from './Pages/Shared/Navigation/Navigation';
 import AddProduct from './Pages/User/Dashboard/AddProduct/AddProduct';
 import AddReview from './Pages/User/Dashboard/AddReview/AddReview';
 import Dashboard from './Pages/User/Dashboard/Dashboard/Dashboard';
+import ManageOrders from './Pages/User/Dashboard/ManageOrders/ManageOrders';
 import MyOrder from './Pages/User/Dashboard/MyOrder/MyOrder';
 import Payment from './Pages/User/Dashboard/Payment/Payment';
 import Login from './Pages/User/Login/Login';
@@ -55,6 +56,9 @@ function App() {
             </Route>
             <Route path="/add-review">
               <AddReview></AddReview>
+            </Route>
+            <Route path="/manage-orders">
+              <ManageOrders></ManageOrders>
             </Route>
 
             <Route path="/login">

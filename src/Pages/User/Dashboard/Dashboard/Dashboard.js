@@ -11,6 +11,7 @@ const Dashboard = () => {
                     <NavLink to="/payment">Payment</NavLink>
                     <NavLink to="/add-review">Add Review</NavLink>
                     <NavLink to="/add-product">Add Product</NavLink>
+                    <NavLink to="/manage-orders">Manage Orders</NavLink>
                 </Nav>
             </Container>
         </div>

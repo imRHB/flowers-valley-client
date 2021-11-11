@@ -34,7 +34,7 @@ const AddProduct = () => {
                             <h3 className="text-center fs-3 fw-bold text-info py-4">Add New Rose Bouquet</h3>
 
                             <form onSubmit={handleSubmit(onSubmit)} className="pb-4 add-package-form">
-                                <input {...register("title", { required: true })} placeholder="Bouquet name" />
+                                <input {...register("title", { required: true })} placeholder="Bouquet title" />
 
                                 <input {...register("img", { required: true })} placeholder="Insert direct image URL" />
 
