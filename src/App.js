@@ -6,7 +6,7 @@ import RoseBouquets from './Pages/Bouquet/RoseBouquets/RoseBouquets';
 import BouquetDetails from './Pages/Details/BouquetDetails/BouquetDetails';
 import NotFound from './Pages/Error/NotFound/NotFound';
 import Home from './Pages/Landing/Home/Home';
-import Occasion from './Pages/Occasion/Occasion';
+import Occasions from './Pages/Occasions/Occasions/Occasions';
 import Footer from './Pages/Shared/Footer/Footer';
 import Navigation from './Pages/Shared/Navigation/Navigation';
 import Login from './Pages/User/Login/Login';
@@ -32,7 +32,7 @@ function App() {
               <BouquetDetails></BouquetDetails>
             </Route>
             <Route path="/occasion">
-              <Occasion></Occasion>
+              <Occasions></Occasions>
             </Route>
 
             <Route path="/dashboard">

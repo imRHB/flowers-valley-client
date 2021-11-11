@@ -13,7 +13,21 @@ const BouquetDetails = () => {
         fetch(`http://localhost:5000/bouquets/${bqId}`)
             .then(res => res.json())
             .then(data => setBouquet(data));
-    }, []);
+    }, [bqId]);
+
+    const handleBouquetOrder = bouquet => {
+        fetch(``, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(bouquet)
+        })
+            .then(res => res.json())
+            .then(result => {
+
+            })
+    };
 
     return (
         <div className="my-5">
@@ -36,7 +50,10 @@ const BouquetDetails = () => {
 
                         <div className="bg-dark text-light p-4 rounded-3">
                             <h2>${price}</h2>
-                            <Button variant="light">
+                            <Button
+                                variant="light"
+                                onClick={handleBouquetOrder}
+                            >
                                 Buy Now
                             </Button>
                         </div>
