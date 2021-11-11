@@ -20,7 +20,7 @@ const AddReview = () => {
 
             });
 
-        alert('Your review added successfully');
+        alert('Your review added successfully. Thanks for your review.');
         reset();
     };
 

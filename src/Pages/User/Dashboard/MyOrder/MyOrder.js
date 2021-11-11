@@ -1,17 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Container, Table } from 'react-bootstrap';
+import useAuth from '../../../../hooks/useAuth';
 
 const MyOrder = () => {
+    const { user } = useAuth();
     const [orders, setOrders] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/orders')
+        const myOrdersUri = `http://localhost:5000/orders/${user.email}`;
+
+        fetch(myOrdersUri)
             .then(res => res.json())
             .then(data => setOrders(data));
     }, [orders]);
 
     const handleDeleteOrder = bqId => {
-        const deleteConfirmation = window.confirm('Do you want to delete the order?');
+        const deleteConfirmation = window.confirm('Do you want to cancel the order?');
 
         if (deleteConfirmation) {
             const bouquetUri = `http://localhost:5000/orders/${bqId}`;
@@ -20,7 +24,7 @@ const MyOrder = () => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    alert('Order deleted successfully.');
+                    alert('Order cancelled successfully.');
                 })
         }
 
@@ -29,7 +33,7 @@ const MyOrder = () => {
     return (
         <div className="my-5">
             <Container>
-                <h2 className="text-center my-4 fs-1 fw-bold text-secondary">My Orders</h2>
+                <h2 className="text-center my-4 fs-1 fw-bold text-secondary">My Order</h2>
 
                 <Table responsive hover size="sm">
                     <thead>
@@ -37,8 +41,6 @@ const MyOrder = () => {
                             <th>#</th>
                             <th>Bouquet Title</th>
                             <th>Bouquet Price</th>
-                            <th>User Name</th>
-                            <th>User Email</th>
                             <th>Status</th>
                             <th>Action</th>
                         </tr>
@@ -49,10 +51,8 @@ const MyOrder = () => {
                                 <td>{index + 1}</td>
                                 <td>{order.title}</td>
                                 <td>${order.price}</td>
-                                <td>{order.userName}</td>
-                                <td>{order.userEmail}</td>
                                 <td>Pending</td>
-                                <td><Button onClick={() => handleDeleteOrder(order._id)} variant="danger" size="sm">DELETE</Button></td>
+                                <td><Button onClick={() => handleDeleteOrder(order._id)} variant="danger" size="sm">CANCEL</Button></td>
                             </tr>)
                         }
                     </tbody>
