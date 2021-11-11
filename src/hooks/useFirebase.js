@@ -11,12 +11,13 @@ const useFirebase = () => {
 
     const auth = getAuth();
 
-    const registerWithEmailPassword = (email, password) => {
+    const registerWithEmailPassword = (email, password, history) => {
         setLoading(true);
 
         createUserWithEmailAndPassword(auth, email, password)
             .then(result => {
                 setUser(result.user);
+                history.replace('/');
                 setAuthError('');
             })
             .catch(error => {

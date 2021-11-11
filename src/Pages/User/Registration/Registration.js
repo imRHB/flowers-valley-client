@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { Alert, Button, Container, FloatingLabel, Form, Spinner } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import './Registration.css';
 
 const Registration = () => {
     const [userData, setUserData] = useState({});
+
+    const history = useHistory();
 
     const { user, authError, loading, registerWithEmailPassword } = useAuth();
 
@@ -25,7 +27,7 @@ const Registration = () => {
             return;
         }
 
-        registerWithEmailPassword(userData.email, userData.password);
+        registerWithEmailPassword(userData.email, userData.password, history);
     };
 
     return (
