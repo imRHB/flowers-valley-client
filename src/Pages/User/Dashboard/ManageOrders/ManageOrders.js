@@ -3,7 +3,6 @@ import { Button, Container, Table } from 'react-bootstrap';
 
 const ManageOrders = () => {
     const [orders, setOrders] = useState([]);
-    console.log(orders);
 
     useEffect(() => {
         fetch('http://localhost:5000/orders')
