@@ -2,7 +2,7 @@ import React from 'react';
 import './Banner.css';
 
 import bannerImg from '../../../images/banner.png';
-import { Container } from 'react-bootstrap';
+import { Button, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const bannerBg = {
@@ -25,7 +25,7 @@ const Banner = () => {
                         <p className="fs-3 fw-bold text-warning">You can find many kinds of Rose Bouquet for different occasions.</p>
 
                         <Link to="/rose-bouquet">
-                            <button className="btn btn-fvs">Explore More</button>
+                            <Button variant="dark" className="btn-fvs">Explore More</Button>
                         </Link>
                     </div>
                 </div>

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
 import RoseBouquets from './Pages/Bouquet/RoseBouquets/RoseBouquets';
+import BouquetDetails from './Pages/Details/BouquetDetails/BouquetDetails';
 import NotFound from './Pages/Error/NotFound/NotFound';
 import Home from './Pages/Landing/Home/Home';
 import Occasion from './Pages/Occasion/Occasion';
@@ -24,8 +25,11 @@ function App() {
             <Route path="/home">
               <Home></Home>
             </Route>
-            <Route path="/rose-bouquet">
+            <Route exact path="/rose-bouquet">
               <RoseBouquets></RoseBouquets>
+            </Route>
+            <Route path="/rose-bouquet/:bqId">
+              <BouquetDetails></BouquetDetails>
             </Route>
             <Route path="/occasion">
               <Occasion></Occasion>

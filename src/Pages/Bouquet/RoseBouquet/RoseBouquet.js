@@ -1,8 +1,9 @@
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const RoseBouquet = (props) => {
-    const { name, img, description, price } = props.bouquet;
+    const { _id, name, img, description, price } = props.bouquet;
 
     return (
         <Col>
@@ -18,13 +19,13 @@ const RoseBouquet = (props) => {
                             <p className="text-info">${price}</p>
                         </div>
                     </Card.Text>
-                    {/* <Card.Text>
+                    <Card.Text>
                         <div className="d-flex justify-content-between">
-                            <Link to={`/packages/${_id}`}>
-                                <button className="btn btn-outline-secondary">Check Now</button>
+                            <Link to={`/rose-bouquet/${_id}`}>
+                                <button className="btn btn-outline-secondary">Details</button>
                             </Link>
                         </div>
-                    </Card.Text> */}
+                    </Card.Text>
                 </Card.Body>
             </Card>
         </Col>

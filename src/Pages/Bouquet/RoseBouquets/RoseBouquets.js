@@ -15,7 +15,7 @@ const RoseBouquets = () => {
         <div className="my-5">
             <Container>
                 <h2 className="text-center fs-1 fw-bold text-secondary my-5">Rose Bouquet</h2>
-                <Row xs={1} md={2} lg={3} xl={4} className="g-4">
+                <Row xs={1} md={2} lg={3} xl={3} className="g-4">
                     {
                         bouquets.map(bouquet => <RoseBouquet
                             key={bouquet._id}
