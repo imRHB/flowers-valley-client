@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom';
 import './RoseBouquet.css';
 
 const RoseBouquet = (props) => {
-    const { _id, name, img, description, price } = props.bouquet;
+    const { _id, title, img, description, price } = props.bouquet;
 
     return (
         <Col>
             <Card className="h-100 rounded-3 text-center bouquet-card">
                 <Card.Img variant="top" src={img} style={{ width: '75%', margin: '0 auto' }} className="p-3" />
                 <Card.Body>
-                    <Card.Title>{name}</Card.Title>
+                    <Card.Title>{title}</Card.Title>
                     <Card.Text>
                         <p>{description?.slice(0, 60)} . . .</p>
                     </Card.Text>

@@ -35,8 +35,11 @@ const AddProduct = () => {
 
                             <form onSubmit={handleSubmit(onSubmit)} className="pb-4 add-package-form">
                                 <input {...register("title", { required: true })} placeholder="Bouquet name" />
+
                                 <input {...register("img", { required: true })} placeholder="Insert direct image URL" />
+
                                 <textarea {...register("description", { required: true })} placeholder="Bouquet description" />
+
                                 <input type="number" {...register("price", { required: true })} placeholder="Bouquet price" />
 
                                 <input type="submit" value="Add New Bouquet" className="btn btn-primary" />

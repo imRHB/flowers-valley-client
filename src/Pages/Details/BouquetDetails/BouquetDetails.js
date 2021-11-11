@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import { useParams } from 'react-router';
+import useAuth from '../../../hooks/useAuth';
 
 const BouquetDetails = () => {
     const { bqId } = useParams();
 
+    const { user } = useAuth();
+
     const [bouquet, setBouquet] = useState({});
 
-    const { name, img, description, price } = bouquet;
+    const { title, img, description, price } = bouquet;
 
     useEffect(() => {
         fetch(`http://localhost:5000/bouquets/${bqId}`)
@@ -15,8 +18,11 @@ const BouquetDetails = () => {
             .then(data => setBouquet(data));
     }, [bqId]);
 
-    const handleBouquetOrder = bouquet => {
-        fetch(``, {
+    const handleBouquetOrder = (bouquet, user) => {
+        bouquet.userName = `${user.displayName}`;
+        bouquet.userEmail = `${user.email}`;
+
+        fetch(`http://localhost:5000/orders`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -26,7 +32,9 @@ const BouquetDetails = () => {
             .then(res => res.json())
             .then(result => {
 
-            })
+            });
+
+        alert('You ordered the bouquet.');
     };
 
     return (
@@ -42,7 +50,7 @@ const BouquetDetails = () => {
                     </Col>
 
                     <Col className="col-md-12 col-lg-6 col-xl-6">
-                        <h1 className="fs-2 fw-bold text-info text-uppercase">{name} Bouquet</h1>
+                        <h1 className="fs-2 fw-bold text-info text-uppercase">{title} Bouquet</h1>
 
                         <div className="bg-light rounded-3 p-4 my-4">
                             <p>{description}</p>
@@ -52,7 +60,7 @@ const BouquetDetails = () => {
                             <h2>${price}</h2>
                             <Button
                                 variant="light"
-                                onClick={handleBouquetOrder}
+                                onClick={() => handleBouquetOrder(bouquet, user)}
                             >
                                 Buy Now
                             </Button>
