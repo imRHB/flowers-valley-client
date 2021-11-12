@@ -44,16 +44,16 @@ const Navigation = () => {
                         }
 
                         {
-                            user?.email ? <div className="d-lg-flex align-items-center justify-content-center my-2 my-md-0">
+                            user?.email ? <div className="d-lg-flex align-items-center justify-content-center my-2 my-lg-0">
 
-                                <h5 className="mx-0 mx-lg-3 mb-3 my-lg-auto text-primary fw-bold m-0"><span className="fs-4 ms-2">{userIcon}</span> {user.displayName}</h5>
+                                <h5 className="mx-0 mx-lg-3 mb-3 my-lg-auto text-success fw-bold m-0"><span className="fs-4 ms-2">{userIcon}</span> {user.displayName}</h5>
 
                                 <Button
                                     variant="dark"
                                     className="ms-2" onClick={logout}>Logout<span className="ms-2">{logoutIcon}</span>
                                 </Button>
                             </div>
-                                : <div className="my-3 my-md-3 my-lg-0">
+                                : <div className="my-3 my-lg-3">
                                     <Button
                                         variant="secondary"
                                         className="ms-2" onClick={handleLogin}>Login<span className="ms-2">{loginIcon}</span></Button>
@@ -62,74 +62,9 @@ const Navigation = () => {
                         }
                     </Nav>
                 </Navbar.Collapse>
-
-                {/* <div className="d-flex">
-                    <Nav className="">
-                        <NavLink to="/home">Home</NavLink>
-                        <NavLink to="/rose-bouquet">Rose Bouquet</NavLink>
-                        <NavLink to="/occasion">Occasion</NavLink>
-                        <NavLink to="/contact">Contact</NavLink>
-                        {
-                            user?.email && <NavLink to="/dashboard">Dashboard</NavLink>
-                        }
-                    </Nav>
-
-                    {user?.email ? <div className="d-flex align-items-center my-2 my-md-0">
-                        <span className="fs-4 ms-2">{userIcon}</span>
-                        <h5 className="mx-2 text-primary fw-bold m-0">{user.displayName}</h5>
-
-                        <Button
-                            variant="dark"
-                            className="" onClick={logout}>Logout<span className="ms-2">{logoutIcon}</span></Button>
-                    </div>
-                        : <div className="my-3 my-md-3 my-lg-0">
-                            <Button
-                                variant="secondary"
-                                className="me-2" onClick={handleLogin}>Login<span className="ms-2">{loginIcon}</span></Button>
-
-                        </div>}
-                </div> */}
             </Container>
         </Navbar>
     );
 };
 
 export default Navigation;
-
-
-/*
-
-<Container className="d-inline">
-                <div className="d-flex align-items-center justify-content-between">
-                    <img src={logo} alt="" style={{ width: 'auto', height: '56px', padding: '4px' }} />
-
-                    <div className="d-flex">
-                        <Nav className="">
-                            <NavLink to="/home">Home</NavLink>
-                            <NavLink to="/rose-bouquet">Rose Bouquet</NavLink>
-                            <NavLink to="/occasion">Occasion</NavLink>
-                            <NavLink to="/contact">Contact</NavLink>
-                            {
-                                user?.email && <NavLink to="/dashboard">Dashboard</NavLink>
-                            }
-                        </Nav>
-
-                        {user?.email ? <div className="d-flex align-items-center my-2 my-md-0">
-                            <span className="fs-4 ms-2">{userIcon}</span>
-                            <h5 className="mx-2 text-primary fw-bold m-0">{user.displayName}</h5>
-
-                            <Button
-                                variant="dark"
-                                className="" onClick={logout}>Logout<span className="ms-2">{logoutIcon}</span></Button>
-                        </div>
-                            : <div className="my-3 my-md-3 my-lg-0">
-                                <Button
-                                    variant="secondary"
-                                    className="me-2" onClick={handleLogin}>Login<span className="ms-2">{loginIcon}</span></Button>
-
-                            </div>}
-                    </div>
-                </div>
-            </Container>
-
-*/

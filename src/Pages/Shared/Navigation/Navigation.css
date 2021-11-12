@@ -4,23 +4,16 @@
 }
 .navbar-nav a {
     font-size: 18px;
-    font-weight: 400;
-    color: blueviolet;
+    font-weight: 500;
+    color: #2C3E50;
     text-decoration: none;
     padding: 8px 12px;
 }
 .navbar-nav a:hover {
-    color: blue;
+    /* color: #ADD8E6; */
     background-color: #eee;
 }
-.user-icon {
-    width: 36px;
-    height: 36px;
-    border: 1px solid #808080;
-    padding: 1px;
-    border-radius: 50%;
-}
-.btn-fvs {
+/* .btn-fvs {
     border: none;
     color: #FFF;
     background-color: #F63E7B;
@@ -28,4 +21,4 @@
 .btn-fvs:hover {
     background-color: #F63E7B;
     opacity: 0.85;
-}
+} */

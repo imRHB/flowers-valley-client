@@ -10,7 +10,6 @@ import NotFound from './Pages/Error/NotFound/NotFound';
 import Home from './Pages/Landing/Home/Home';
 import Occasions from './Pages/Occasions/Occasions/Occasions';
 import Footer from './Pages/Shared/Footer/Footer';
-import Header from './Pages/Shared/Header/Header';
 import Navigation from './Pages/Shared/Navigation/Navigation';
 import AddProduct from './Pages/User/Dashboard/AddProduct/AddProduct';
 import AddReview from './Pages/User/Dashboard/AddReview/AddReview';
@@ -29,7 +28,6 @@ function App() {
       <AuthProvider>
         <Router>
           <Navigation></Navigation>
-          {/* <Header></Header> */}
           <Switch>
             <Route exact path="/">
               <Home></Home>
