@@ -31,9 +31,11 @@ const MyOrder = () => {
     };
 
     return (
-        <div className="my-5">
+        <div>
             <Container>
-                <h2 className="text-center my-4 fs-1 fw-bold text-secondary">My Order</h2>
+                <div className="mb-4">
+                    <h3 className="fw-bold">My Order</h3>
+                </div>
 
                 <Table responsive hover size="sm">
                     <thead>

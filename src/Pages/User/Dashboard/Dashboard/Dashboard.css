@@ -1,0 +1,15 @@
+.nav-item .dash-nav-link {
+    font-size: 18px;
+    margin: 0;
+    padding: 6px 24px;
+    border-radius: 4px;
+    color: #F63E7B;
+    cursor: pointer;
+}
+.nav-item .dash-nav-link:hover {
+    color: #F63E7B;
+    background-color: #E5E5E5;
+}
+.nav-item .dash-nav-link:active {
+    background-color: #E5E5E5;
+}

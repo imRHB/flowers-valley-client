@@ -26,9 +26,11 @@ const ManageOrders = () => {
     };
 
     return (
-        <div className="my-5">
+        <div>
             <Container>
-                <h2 className="text-center my-4 fs-1 fw-bold text-secondary">Manage Orders</h2>
+                <div className="mb-4">
+                    <h3 className="fw-bold">Manage Services</h3>
+                </div>
 
                 <Table responsive hover size="sm">
                     <thead>

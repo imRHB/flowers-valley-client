@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Container, FloatingLabel, Form } from 'react-bootstrap';
+import { Button, Container, Form } from 'react-bootstrap';
 
 const MakeAdmin = () => {
     const [userData, setUserData] = useState({});
@@ -19,33 +19,29 @@ const MakeAdmin = () => {
     };
 
     return (
-        <div className="my-5">
+        <div>
             <Container>
-                <div className="" style={{ maxWidth: '520px', margin: '0 auto', minHeight: '60vh' }}>
-                    <Form onSubmit={handleMakeAdmin} className="mx-auto">
-                        <FloatingLabel
-                            controlId="floatingInput"
-                            label="Email Address"
-                            className="mb-3"
-                        >
-                            <Form.Control
-                                name="email"
-                                onChange={handleOnChange}
-                                type="email"
-                                placeholder="Email Address" />
-                        </FloatingLabel>
-
-                        <div className="ms-2">
-                            <Button
-                                className="btn-fvs"
-                                type="submit"
-                                variant="secondary"
-                                size="l">
-                                Make Admin
-                            </Button>
-                        </div>
-                    </Form>
+                <div className="mb-4">
+                    <h3 className="fw-bold">Make Admin</h3>
                 </div>
+
+                <Form onSubmit={handleMakeAdmin}>
+                    <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                        <Form.Label>Email Address</Form.Label>
+                        <Form.Control
+                            onChange={handleOnChange}
+                            style={{ maxWidth: '570px', margin: 'auto 0' }}
+                            type="email"
+                            placeholder="Enter Email" />
+                    </Form.Group>
+
+                    <Button
+                        type="submit"
+                        className=""
+                    >
+                        Add as Admin
+                    </Button>
+                </Form>
             </Container>
         </div>
     );
