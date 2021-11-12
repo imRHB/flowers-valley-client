@@ -1,41 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import { useParams } from 'react-router';
-import useAuth from '../../../hooks/useAuth';
+import { Link } from 'react-router-dom';
 
 const BouquetDetails = () => {
     const { bqId } = useParams();
 
-    const { user } = useAuth();
-
     const [bouquet, setBouquet] = useState({});
 
-    const { title, img, description, price } = bouquet;
+    const { _id, title, img, description, price } = bouquet;
 
     useEffect(() => {
         fetch(`http://localhost:5000/bouquets/${bqId}`)
             .then(res => res.json())
             .then(data => setBouquet(data));
     }, [bqId]);
-
-    const handleBouquetOrder = (bouquet, user) => {
-        bouquet.userName = `${user.displayName}`;
-        bouquet.userEmail = `${user.email}`;
-
-        fetch(`http://localhost:5000/orders`, {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(bouquet)
-        })
-            .then(res => res.json())
-            .then(result => {
-
-            });
-
-        alert('You ordered the bouquet.');
-    };
 
     return (
         <div className="my-5">
@@ -58,12 +37,13 @@ const BouquetDetails = () => {
 
                         <div className="bg-dark text-light p-4 rounded-3">
                             <h2>${price}</h2>
-                            <Button
-                                variant="light"
-                                onClick={() => handleBouquetOrder(bouquet, user)}
-                            >
-                                Buy Now
-                            </Button>
+                            <Link to={`/place-order/${_id}`}>
+                                <Button
+                                    variant="light"
+                                >
+                                    Buy Now
+                                </Button>
+                            </Link>
                         </div>
                     </Col>
                 </Row>

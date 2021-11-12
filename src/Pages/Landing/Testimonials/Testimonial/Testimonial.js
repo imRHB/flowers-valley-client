@@ -1,15 +1,16 @@
-import { faQuoteLeft, faQuoteRight, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faQuoteLeft, faQuoteRight, faStar, faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
 import './Testimonial.css';
 
 const userIcon = <FontAwesomeIcon icon={faUser} />;
+const ratingIcon = <FontAwesomeIcon icon={faStar} />;
 // const quoteLeftIcon = <FontAwesomeIcon icon={faQuoteLeft} />;
 // const quoteRighttIcon = <FontAwesomeIcon icon={faQuoteRight} />;
 
 const Testimonial = (props) => {
-    const { name, comment } = props.review;
+    const { name, comment, rating } = props.review;
 
     return (
         <Col>
@@ -28,6 +29,10 @@ const Testimonial = (props) => {
                 <Card.Body className="p-0">
                     <Card.Text className="my-4">
                         {comment}
+                    </Card.Text>
+
+                    <Card.Text className="my-4">
+                        {rating} <span><small>{ratingIcon}</small></span>
                     </Card.Text>
                 </Card.Body>
             </Card>

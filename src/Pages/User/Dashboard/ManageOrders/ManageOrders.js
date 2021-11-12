@@ -8,7 +8,7 @@ const ManageOrders = () => {
         fetch('http://localhost:5000/orders')
             .then(res => res.json())
             .then(data => setOrders(data));
-    }, [orders]);
+    }, []);
 
     const handleDeleteOrder = bqId => {
         const deleteConfirmation = window.confirm('Do you want to delete the order?');
@@ -23,7 +23,6 @@ const ManageOrders = () => {
                     alert('Order deleted successfully.');
                 })
         }
-
     };
 
     return (
@@ -49,8 +48,8 @@ const ManageOrders = () => {
                                 <td>{index + 1}</td>
                                 <td>{order.title}</td>
                                 <td>${order.price}</td>
-                                <td>{order.userName}</td>
-                                <td>{order.userEmail}</td>
+                                <td>{order.displayName}</td>
+                                <td>{order.email}</td>
                                 <td>Pending</td>
                                 <td><Button variant="success" size="sm">APPROVE</Button> <Button onClick={() => handleDeleteOrder(order._id)} variant="danger" size="sm">DELETE</Button></td>
                             </tr>)

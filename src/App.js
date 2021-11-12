@@ -5,6 +5,7 @@ import AuthProvider from './contexts/AuthProvider/AuthProvider';
 import RoseBouquets from './Pages/Bouquet/RoseBouquets/RoseBouquets';
 import Contact from './Pages/Contact/Contact';
 import BouquetDetails from './Pages/Details/BouquetDetails/BouquetDetails';
+import PlaceOrder from './Pages/Details/PlaceOrder/PlaceOrder';
 import NotFound from './Pages/Error/NotFound/NotFound';
 import Home from './Pages/Landing/Home/Home';
 import Occasions from './Pages/Occasions/Occasions/Occasions';
@@ -38,6 +39,9 @@ function App() {
             </Route>
             <PrivateRoute path="/rose-bouquet/:bqId">
               <BouquetDetails></BouquetDetails>
+            </PrivateRoute>
+            <PrivateRoute exact path="/place-order/:bqId">
+              <PlaceOrder></PlaceOrder>
             </PrivateRoute>
             <Route path="/occasion">
               <Occasions></Occasions>

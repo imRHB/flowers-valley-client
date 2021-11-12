@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Col } from 'react-bootstrap';
+import { Button, Card, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './RoseBouquet.css';
 
@@ -19,7 +19,8 @@ const RoseBouquet = (props) => {
                         <div className="d-flex justify-content-between fs-3 fw-bold">
                             <p className="text-info">${price}</p>
                             <Link to={`/rose-bouquet/${_id}`}>
-                                <button className="btn btn-outline-secondary">Details</button>
+                                <Button
+                                    variant="outline-secondary">Details</Button>
                             </Link>
                         </div>
                     </Card.Text>
