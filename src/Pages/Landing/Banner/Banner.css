@@ -1,0 +1,8 @@
+.banner-title {
+    border: 1px solid;
+
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

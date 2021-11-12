@@ -47,13 +47,15 @@ const PlaceOrder = () => {
 
     return (
         <div className="my-5">
-            <h2 className="text-center fw-bold text-info py-4">Order Checkout</h2>
-
             <Container>
+                <div>
+                    <h2 className="text-center fw-bold text-success py-4">Order Checkout</h2>
+                </div>
+
                 <Row>
                     <Col>
                         <div className="bg-light py-5 rounded-3 border">
-                            <p className="fs-4 fw-bold text-center">Product Information</p>
+                            <p className="fs-4 fw-bold text-center text-info">Product Information</p>
 
                             <div className="mx-3">
                                 <Row xs={2} sm={2} md={2} lg={2}>
@@ -83,13 +85,7 @@ const PlaceOrder = () => {
 
                     <Col>
                         <div className="bg-light py-5 rounded-3 border">
-                            {/* <Button
-                                onClick={() => handleBouquetOrder(bouquet, user)}
-                            >
-                                Place Order
-                            </Button> */}
-
-                            <p className="fs-4 fw-bold text-center">User Information</p>
+                            <p className="fs-4 fw-bold text-center text-info">User Information</p>
 
                             <form onSubmit={handleSubmit(onSubmit)} className="pb-4 add-package-form">
                                 <input {...register("displayName", { required: true })} value={user.displayName} readOnly />
@@ -102,7 +98,6 @@ const PlaceOrder = () => {
 
                                 <input type="submit" value="Place Order" className="btn btn-primary" />
                             </form>
-
                         </div>
                     </Col>
                 </Row>

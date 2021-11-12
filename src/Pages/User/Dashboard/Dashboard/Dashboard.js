@@ -25,7 +25,7 @@ const Dashboard = () => {
         <div>
             <Container fluid className="p-5">
                 <Tab.Container id="left-tabs-example" defaultActiveKey="my-order">
-                    <Row className="">
+                    <Row>
                         <Col sm={3}>
                             <div className="bg-light rounded-3 py-3" style={{ minHeight: '80vh', position: 'sticky', top: '48px' }}>
                                 <Nav variant="" className="flex-column dash-nav">

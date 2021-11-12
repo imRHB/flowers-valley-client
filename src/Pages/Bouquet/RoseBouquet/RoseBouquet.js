@@ -20,17 +20,10 @@ const RoseBouquet = (props) => {
                             <p className="text-info">${price}</p>
                             <Link to={`/rose-bouquet/${_id}`}>
                                 <Button
-                                    variant="outline-secondary">Details</Button>
+                                    variant="secondary">Details</Button>
                             </Link>
                         </div>
                     </Card.Text>
-                    {/* <Card.Text>
-                        <div className="d-flex justify-content-between">
-                            <Link to={`/rose-bouquet/${_id}`}>
-                                <button className="btn btn-outline-secondary">Details</button>
-                            </Link>
-                        </div>
-                    </Card.Text> */}
                 </Card.Body>
             </Card>
         </Col>

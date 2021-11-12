@@ -35,11 +35,11 @@ const BouquetDetails = () => {
                             <p>{description}</p>
                         </div>
 
-                        <div className="bg-dark text-light p-4 rounded-3">
+                        <div className="bg-light p-4 rounded-3">
                             <h2>${price}</h2>
                             <Link to={`/place-order/${_id}`}>
                                 <Button
-                                    variant="light"
+                                    variant="success"
                                 >
                                     Buy Now
                                 </Button>
