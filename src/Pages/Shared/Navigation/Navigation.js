@@ -6,6 +6,12 @@ import useAuth from '../../../hooks/useAuth';
 import './Navigation.css';
 
 import logo from '../../../images/logo.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSignInAlt, faSignOutAlt, faUserCircle } from '@fortawesome/free-solid-svg-icons';
+
+const userIcon = <FontAwesomeIcon icon={faUserCircle} />;
+const logoutIcon = <FontAwesomeIcon icon={faSignOutAlt} />;
+const loginIcon = <FontAwesomeIcon icon={faSignInAlt} />;
 
 const Navigation = () => {
     const { user, logout } = useAuth();
@@ -27,13 +33,13 @@ const Navigation = () => {
                             <NavLink to="/home">Home</NavLink>
                             <NavLink to="/rose-bouquet">Rose Bouquet</NavLink>
                             <NavLink to="/occasion">Occasion</NavLink>
-                            <NavLink to="/contact">Contact Us</NavLink>
+                            <NavLink to="/contact">Contact</NavLink>
                             {
                                 user?.email && <NavLink to="/dashboard">Dashboard</NavLink>
                             }
                         </Nav>
 
-                        {
+                        {/* {
                             user?.email ? <Button
                                 onClick={logout}
                                 variant="danger" className="ms-2 btn-fvs">Logout</Button>
@@ -41,7 +47,22 @@ const Navigation = () => {
                                 <Button
                                     onClick={handleLogin} variant="danger" className="ms-2 btn-fvs"
                                 >Login</Button>
-                        }
+                        } */}
+
+                        {user?.email ? <div className="d-flex align-items-center my-2 my-md-0">
+                            <span className="fs-4 ms-2">{userIcon}</span>
+                            <h5 className="mx-2 text-primary fw-bold m-0">{user.displayName}</h5>
+
+                            <Button
+                                variant="dark"
+                                className="" onClick={logout}>Logout<span className="ms-2">{logoutIcon}</span></Button>
+                        </div>
+                            : <div className="my-3 my-md-3 my-lg-0">
+                                <Button
+                                    variant="secondary"
+                                    className="me-2" onClick={handleLogin}>Login<span className="ms-2">{loginIcon}</span></Button>
+
+                            </div>}
                     </div>
                 </div>
             </Container>
