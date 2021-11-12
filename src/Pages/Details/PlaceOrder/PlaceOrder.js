@@ -13,7 +13,9 @@ const PlaceOrder = () => {
     const { register, handleSubmit, reset } = useForm();
 
     const [orderedBouquet, setOrderedBouquet] = useState({});
-    // console.log(bouquet);
+
+    const [newOrder, setNewOrder] = useState({});
+    console.log(newOrder);
 
     const { user } = useAuth();
 
@@ -24,32 +26,24 @@ const PlaceOrder = () => {
     }, [bqId]);
 
     const onSubmit = (data) => {
-        // console.log({ ...bouquet });
-        // const newb = { ...bouquet, data };
-        // newb.status = 'Pending';
-        // setBouquet(newb);
-        // console.log(newb);
-        console.log({ data });
-
+        const newOrderedBouquet = { ...orderedBouquet, ...data };
+        setNewOrder(newOrderedBouquet);
 
         fetch(`http://localhost:5000/orders`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(orderedBouquet)
+            body: JSON.stringify(newOrder)
         })
             .then(res => res.json())
             .then(result => {
-                console.log(result);
+
             });
 
         alert('You ordered the bouquet.');
         reset();
     };
-
-
-
 
     return (
         <div className="my-5">

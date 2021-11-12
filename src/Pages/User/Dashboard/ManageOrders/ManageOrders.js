@@ -8,7 +8,7 @@ const ManageOrders = () => {
         fetch('http://localhost:5000/orders')
             .then(res => res.json())
             .then(data => setOrders(data));
-    }, []);
+    }, [orders]);
 
     const handleDeleteOrder = bqId => {
         const deleteConfirmation = window.confirm('Do you want to delete the order?');
