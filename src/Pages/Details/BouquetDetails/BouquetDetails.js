@@ -41,7 +41,7 @@ const BouquetDetails = () => {
                                 <Button
                                     variant="success"
                                 >
-                                    Buy Now
+                                    Order Now
                                 </Button>
                             </Link>
                         </div>

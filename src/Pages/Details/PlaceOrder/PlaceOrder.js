@@ -24,12 +24,13 @@ const PlaceOrder = () => {
     }, [bqId]);
 
     const onSubmit = (data) => {
+
         fetch(`http://localhost:5000/orders`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify({ ...orderedBouquet, ...data })
+            body: JSON.stringify({ ...orderedBouquet, ...data, status: 'Pending' })
         })
             .then(res => res.json())
             .then(result => {
@@ -52,14 +53,17 @@ const PlaceOrder = () => {
                             <p className="fs-4 fw-bold text-center text-info">Product Information</p>
 
                             <div className="mx-3">
-                                <Row xs={2} sm={2} md={2} lg={2}>
-                                    <Col className="col-3 col-lg-3">
+                                <div className="text-center">
+                                    <img src={orderedBouquet.img} alt="" className="w-50 border rounded-3" />
+                                </div>
+                                <Row xs={2} sm={2} md={2} lg={2} className="my-4">
+                                    <Col className="col-3 col-sm-3 col-md-3 col-lg-3">
                                         <p className="fs-5 fw-bold">Name</p>
                                         <p className="fs-5 fw-bold">Type</p>
                                         <p className="fs-5 fw-bold">Price</p>
                                     </Col>
 
-                                    <Col className="col-9 col-lg-9">
+                                    <Col className="col-9 col-sm-9 col-md-9 col-lg-9">
                                         <p className="fs-5">{orderedBouquet.title}</p>
                                         <p className="fs-5">Bouquet</p>
                                         <p className="fs-5">${orderedBouquet.price}</p>
@@ -78,7 +82,7 @@ const PlaceOrder = () => {
                     </Col>
 
                     <Col>
-                        <div className="bg-light py-5 rounded-3 border">
+                        <div className="bg-light py-5 rounded-3 border" style={{ position: 'sticky', top: '100px' }}>
                             <p className="fs-4 fw-bold text-center text-info">User Information</p>
 
                             <form onSubmit={handleSubmit(onSubmit)} className="pb-4 place-order-form">
@@ -90,7 +94,7 @@ const PlaceOrder = () => {
 
                                 <input type="number" {...register("phone", { required: true })} placeholder="Phone number" />
 
-                                <input type="submit" value="Place Order" className="btn btn-primary" />
+                                <input type="submit" value="Place Order" className="btn btn-secondary" />
                             </form>
                         </div>
                     </Col>

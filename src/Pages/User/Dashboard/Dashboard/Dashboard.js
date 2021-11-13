@@ -14,6 +14,7 @@ import Payment from '../Payment/Payment';
 import './Dashboard.css';
 import useAuth from '../../../../hooks/useAuth';
 import AdminRoute from '../../Login/AdminRoute/AdminRoute';
+import ManageProducts from '../ManageProducts/ManageProducts';
 
 const dashboardIcon = <FontAwesomeIcon icon={faTh} />;
 const reviewIcon = <FontAwesomeIcon icon={faCommentAlt} />;
@@ -43,11 +44,12 @@ const Dashboard = () => {
                                     {
                                         admin && <>
                                             <Link to={`${url}/manage-orders`}><span className="me-3">{serviceIcon}</span>Manage Orders</Link>
+                                            <Link to={`${url}/manage-products`}><span className="me-3">{serviceIcon}</span>Manage Products</Link>
                                             <Link to={`${url}/add-product`}><span className="me-3">{plusIcon}</span>Add Product</Link>
                                             <Link to={`${url}/add-admin`}><span className="me-2">{userPlus}</span>Add Admin</Link>
                                         </>
                                     }
-                                    <Link to='/login' onClick={logout}><span className="me-3">{logoutIcon}</span>Logout</Link>
+                                    <Link to='/login' className="" onClick={logout}><span className="me-3">{logoutIcon}</span>Logout</Link>
                                 </Nav>
                             </div>
                         </Col>
@@ -71,6 +73,9 @@ const Dashboard = () => {
                                     </Route>
                                     <AdminRoute path={`${path}/manage-orders`}>
                                         <ManageOrders></ManageOrders>
+                                    </AdminRoute>
+                                    <AdminRoute path={`${path}/manage-products`}>
+                                        <ManageProducts></ManageProducts>
                                     </AdminRoute>
                                     <AdminRoute path={`${path}/add-product`}>
                                         <AddProduct></AddProduct>

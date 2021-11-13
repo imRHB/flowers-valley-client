@@ -4,8 +4,11 @@
     padding: 6px 24px;
     color: #2C3E50;
     cursor: pointer;
+    transition: 0.3s;
 }
 .dash-nav a:hover {
-    color: #4CAF50;
-    background-color: #EEE;
+    /* color: #4CAF50;
+    background-color: #EEE; */
+    color: #FFF;
+    background-color: #333;
 }
