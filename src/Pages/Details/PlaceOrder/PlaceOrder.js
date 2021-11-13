@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import { useParams } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 import { useForm } from 'react-hook-form';
 import useAuth from '../../../hooks/useAuth';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -11,14 +11,11 @@ const disclaimerIcon = <FontAwesomeIcon icon={faExclamationTriangle} />;
 
 const PlaceOrder = () => {
     const { bqId } = useParams();
-    const { register, handleSubmit, reset } = useForm();
-
-    const [orderedBouquet, setOrderedBouquet] = useState({});
-
-    const [newOrder, setNewOrder] = useState({});
-    console.log(newOrder);
-
     const { user } = useAuth();
+    const history = useHistory();
+
+    const { register, handleSubmit, reset } = useForm();
+    const [orderedBouquet, setOrderedBouquet] = useState({});
 
     useEffect(() => {
         fetch(`http://localhost:5000/bouquets/${bqId}`)
@@ -27,23 +24,19 @@ const PlaceOrder = () => {
     }, [bqId]);
 
     const onSubmit = (data) => {
-        const newOrderedBouquet = { ...orderedBouquet, ...data };
-        setNewOrder(newOrderedBouquet);
-
         fetch(`http://localhost:5000/orders`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(newOrder)
+            body: JSON.stringify({ ...orderedBouquet, ...data })
         })
             .then(res => res.json())
             .then(result => {
-
+                alert('You ordered the bouquet.');
+                reset();
+                history.push('/rose-bouquet');
             });
-
-        alert('You ordered the bouquet.');
-        reset();
     };
 
     return (

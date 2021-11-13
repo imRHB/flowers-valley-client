@@ -41,6 +41,7 @@ const MyOrder = () => {
                     <thead>
                         <tr>
                             <th>#</th>
+                            <th>Image</th>
                             <th>Bouquet Title</th>
                             <th>Bouquet Price</th>
                             <th>Status</th>
@@ -52,6 +53,7 @@ const MyOrder = () => {
                         {
                             orders.map((order, index) => <tr>
                                 <td>{index + 1}</td>
+                                <td><img src={order.img} style={{ width: '72px', border: '1px solid gray', borderRadius: '4px' }} alt="" /></td>
                                 <td>{order.title}</td>
                                 <td>${order.price}</td>
                                 <td>Pending</td>
