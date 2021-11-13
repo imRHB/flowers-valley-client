@@ -6,7 +6,7 @@ const Occasions = () => {
     const [occasions, setOccasions] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/occasion')
+        fetch('https://quiet-peak-91569.herokuapp.com/occasion')
             .then(res => res.json())
             .then(data => setOccasions(data));
     }, []);

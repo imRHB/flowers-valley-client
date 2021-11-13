@@ -9,7 +9,7 @@ const AddReview = () => {
     const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = data => {
-        fetch(`http://localhost:5000/add-review`, {
+        fetch(`https://quiet-peak-91569.herokuapp.com/add-review`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

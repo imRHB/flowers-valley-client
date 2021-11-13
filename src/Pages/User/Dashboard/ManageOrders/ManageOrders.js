@@ -5,7 +5,7 @@ const ManageOrders = () => {
     const [orders, setOrders] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/orders')
+        fetch('https://quiet-peak-91569.herokuapp.com/orders')
             .then(res => res.json())
             .then(data => setOrders(data));
     }, [orders]);
@@ -14,7 +14,7 @@ const ManageOrders = () => {
         const deleteConfirmation = window.confirm('Do you want to delete the order?');
 
         if (deleteConfirmation) {
-            const bouquetUri = `http://localhost:5000/orders/${bqId}`;
+            const bouquetUri = `https://quiet-peak-91569.herokuapp.com/orders/${bqId}`;
             fetch(bouquetUri, {
                 method: 'DELETE'
             })

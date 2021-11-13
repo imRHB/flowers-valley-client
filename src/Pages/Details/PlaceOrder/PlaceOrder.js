@@ -18,14 +18,14 @@ const PlaceOrder = () => {
     const [orderedBouquet, setOrderedBouquet] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:5000/bouquets/${bqId}`)
+        fetch(`https://quiet-peak-91569.herokuapp.com/bouquets/${bqId}`)
             .then(res => res.json())
             .then(data => setOrderedBouquet(data));
     }, [bqId]);
 
     const onSubmit = (data) => {
 
-        fetch(`http://localhost:5000/orders`, {
+        fetch(`https://quiet-peak-91569.herokuapp.com/orders`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -11,7 +11,7 @@ const BouquetDetails = () => {
     const { _id, title, img, description, price } = bouquet;
 
     useEffect(() => {
-        fetch(`http://localhost:5000/bouquets/${bqId}`)
+        fetch(`https://quiet-peak-91569.herokuapp.com/bouquets/${bqId}`)
             .then(res => res.json())
             .then(data => setBouquet(data));
     }, [bqId]);

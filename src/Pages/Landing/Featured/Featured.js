@@ -6,7 +6,7 @@ const Featured = () => {
     const [bouquets, setBouquets] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/bouquets')
+        fetch('https://quiet-peak-91569.herokuapp.com/bouquets')
             .then(res => res.json())
             .then(data => setBouquets(data.slice(0, 6)));
     }, []);
