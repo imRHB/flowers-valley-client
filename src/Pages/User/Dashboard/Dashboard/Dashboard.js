@@ -59,7 +59,10 @@ const Dashboard = () => {
                                 <Switch>
                                     <Route exact path={path}>
                                         <div>
-                                            <h2 className="fw-bold">Hello <span className="text-secondary">{user.displayName}</span>!</h2>
+                                            <Container>
+                                                <h2 className="fw-bold">Hello <span className="text-secondary">{user.displayName}</span>!</h2>
+                                                <p>{user.email}</p>
+                                            </Container>
                                         </div>
                                     </Route>
                                     <Route path={`${path}/my-order`}>

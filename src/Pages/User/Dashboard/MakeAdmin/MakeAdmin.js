@@ -14,23 +14,27 @@ const MakeAdmin = () => {
 
         const user = { email };
 
-        fetch('http://localhost:5000/users/admin', {
-            method: 'PUT',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(user)
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.modifiedCount) {
-                    alert('New admin added successfully.');
-                    setSuccess(true);
-                }
-                else {
-                    alert('Email address not found on the server');
-                }
+        const confirmToAddAdmin = window.confirm('Do you want to add a new admin?');
+
+        if (confirmToAddAdmin) {
+            fetch('http://localhost:5000/users/admin', {
+                method: 'PUT',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(user)
             })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.modifiedCount) {
+                        alert('New admin added successfully.');
+                        setSuccess(true);
+                    }
+                    else {
+                        alert('Email address not found on the server');
+                    }
+                })
+        }
     };
 
     return (
