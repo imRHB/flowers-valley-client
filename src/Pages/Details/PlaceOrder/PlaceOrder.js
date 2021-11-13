@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form';
 import useAuth from '../../../hooks/useAuth';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
+import './PlaceOrder.css';
 
 const disclaimerIcon = <FontAwesomeIcon icon={faExclamationTriangle} />;
 
@@ -52,7 +53,7 @@ const PlaceOrder = () => {
                     <h2 className="text-center fw-bold text-success py-4">Order Checkout</h2>
                 </div>
 
-                <Row>
+                <Row xs={1} sm={1} md={1} lg={2} xl={2}>
                     <Col>
                         <div className="bg-light py-5 rounded-3 border">
                             <p className="fs-4 fw-bold text-center text-info">Product Information</p>
@@ -87,7 +88,7 @@ const PlaceOrder = () => {
                         <div className="bg-light py-5 rounded-3 border">
                             <p className="fs-4 fw-bold text-center text-info">User Information</p>
 
-                            <form onSubmit={handleSubmit(onSubmit)} className="pb-4 add-package-form">
+                            <form onSubmit={handleSubmit(onSubmit)} className="pb-4 place-order-form">
                                 <input {...register("displayName", { required: true })} value={user.displayName} readOnly />
 
                                 <input {...register("email", { required: true })} value={user.email} readOnly />
