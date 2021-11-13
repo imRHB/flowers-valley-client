@@ -1,11 +1,11 @@
-.nav-item .dash-nav-link {
+.dash-nav a {
     font-size: 18px;
     margin: 0;
     padding: 6px 24px;
     color: #2C3E50;
     cursor: pointer;
 }
-.nav-item .dash-nav-link:hover {
+.dash-nav a:hover {
     color: #4CAF50;
     background-color: #EEE;
 }

@@ -54,6 +54,11 @@ function App() {
             <PrivateRoute path="/dashboard">
               <Dashboard></Dashboard>
             </PrivateRoute>
+
+            {/* 
+            <PrivateRoute path="/dashboard">
+              <Dashboard></Dashboard>
+            </PrivateRoute>
             <PrivateRoute path="/my-order">
               <MyOrder></MyOrder>
             </PrivateRoute>
@@ -72,6 +77,7 @@ function App() {
             <PrivateRoute path="/add-admin">
               <MakeAdmin></MakeAdmin>
             </PrivateRoute>
+ */}
 
             <Route path="/login">
               <Login></Login>
