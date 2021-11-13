@@ -7,10 +7,10 @@ const PrivateRoute = ({ children, ...rest }) => {
     const { user, loading } = useAuth();
 
     if (loading) {
-        return <div style={{ minHeight: '50vh' }}>
+        return <div className="text-center">
             <Spinner
                 animation="border"
-                variant="info"
+                variant="warning"
             />
         </div>
     }

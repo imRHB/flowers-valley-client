@@ -101,7 +101,7 @@ const Login = () => {
 
             <div className="text-center">
                 {
-                    loading && <div style={{ minHeight: '50vh' }}>
+                    loading && <div className="text-center">
                         <Spinner
                             animation="border"
                             variant="warning"
