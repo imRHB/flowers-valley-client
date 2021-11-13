@@ -2,20 +2,33 @@ import React, { useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 
 const MakeAdmin = () => {
-    const [userData, setUserData] = useState({});
+    const [email, setEmail] = useState({});
 
-    const handleOnChange = e => {
-        const field = e.target.name;
-        const value = e.target.value;
-
-        const newUserData = { ...userData };
-        newUserData[field] = value;
-        setUserData(newUserData);
+    const handleOnBlur = e => {
+        setEmail(e.target.value);
     };
 
     const handleMakeAdmin = e => {
         e.preventDefault();
 
+        const user = { email };
+
+        fetch('http://localhost:5000/users/admin', {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount === 1) {
+                    alert('New admin added successfully.');
+                }
+                else {
+                    alert('Email address not found on the server');
+                }
+            })
     };
 
     return (
@@ -29,7 +42,7 @@ const MakeAdmin = () => {
                     <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                         <Form.Label>Email Address</Form.Label>
                         <Form.Control
-                            onChange={handleOnChange}
+                            onBlur={handleOnBlur}
                             style={{ maxWidth: '570px', margin: 'auto 0' }}
                             type="email"
                             placeholder="Enter Email" />
