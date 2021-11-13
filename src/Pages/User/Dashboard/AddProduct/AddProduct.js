@@ -19,7 +19,7 @@ const AddProduct = () => {
 
             });
 
-        alert('New Bouquet added successfully! Check in dashboard!');
+        alert('New Bouquet added successfully!');
         reset();
     };
 

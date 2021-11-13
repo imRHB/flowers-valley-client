@@ -34,7 +34,7 @@ const PlaceOrder = () => {
         })
             .then(res => res.json())
             .then(result => {
-                alert('You ordered the bouquet.');
+                alert('You ordered the bouquet. You can track or cancel your order from dashboard.');
                 reset();
                 history.push('/rose-bouquet');
             });

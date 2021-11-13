@@ -26,8 +26,6 @@ const MakeAdmin = () => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data);
-
                     if (data.modifiedCount) {
                         alert(`"${email}" successfully added as admin.`);
                         setSuccess(true);
