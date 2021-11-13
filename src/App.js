@@ -11,13 +11,7 @@ import Home from './Pages/Landing/Home/Home';
 import Occasions from './Pages/Occasions/Occasions/Occasions';
 import Footer from './Pages/Shared/Footer/Footer';
 import Navigation from './Pages/Shared/Navigation/Navigation';
-import AddProduct from './Pages/User/Dashboard/AddProduct/AddProduct';
-import AddReview from './Pages/User/Dashboard/AddReview/AddReview';
 import Dashboard from './Pages/User/Dashboard/Dashboard/Dashboard';
-import MakeAdmin from './Pages/User/Dashboard/MakeAdmin/MakeAdmin';
-import ManageOrders from './Pages/User/Dashboard/ManageOrders/ManageOrders';
-import MyOrder from './Pages/User/Dashboard/MyOrder/MyOrder';
-import Payment from './Pages/User/Dashboard/Payment/Payment';
 import Login from './Pages/User/Login/Login';
 import PrivateRoute from './Pages/User/PrivateRoute/PrivateRoute';
 import Registration from './Pages/User/Registration/Registration';
@@ -38,9 +32,9 @@ function App() {
             <Route exact path="/rose-bouquet">
               <RoseBouquets></RoseBouquets>
             </Route>
-            <PrivateRoute path="/rose-bouquet/:bqId">
+            <Route path="/rose-bouquet/:bqId">
               <BouquetDetails></BouquetDetails>
-            </PrivateRoute>
+            </Route>
             <PrivateRoute exact path="/place-order/:bqId">
               <PlaceOrder></PlaceOrder>
             </PrivateRoute>
@@ -51,33 +45,13 @@ function App() {
               <Contact></Contact>
             </Route>
 
+            {/* Dashboard private route */}
+
             <PrivateRoute path="/dashboard">
               <Dashboard></Dashboard>
             </PrivateRoute>
 
-            {/* 
-            <PrivateRoute path="/dashboard">
-              <Dashboard></Dashboard>
-            </PrivateRoute>
-            <PrivateRoute path="/my-order">
-              <MyOrder></MyOrder>
-            </PrivateRoute>
-            <PrivateRoute path="/payment">
-              <Payment></Payment>
-            </PrivateRoute>
-            <PrivateRoute path="/add-product">
-              <AddProduct></AddProduct>
-            </PrivateRoute>
-            <PrivateRoute path="/add-review">
-              <AddReview></AddReview>
-            </PrivateRoute>
-            <PrivateRoute path="/manage-orders">
-              <ManageOrders></ManageOrders>
-            </PrivateRoute>
-            <PrivateRoute path="/add-admin">
-              <MakeAdmin></MakeAdmin>
-            </PrivateRoute>
- */}
+            {/* User login ang registration */}
 
             <Route path="/login">
               <Login></Login>

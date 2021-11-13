@@ -13,7 +13,7 @@ const PrivateRoute = ({ children, ...rest }) => {
                 variant="warning"
             />
         </div>
-    }
+    };
 
     return (
         <Route

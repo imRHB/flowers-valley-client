@@ -53,7 +53,8 @@ const Navigation = () => {
                                     className="ms-2" onClick={logout}>Logout<span className="ms-2">{logoutIcon}</span>
                                 </Button>
                             </div>
-                                : <div className="my-3 my-lg-3">
+                                :
+                                <div className="my-3 my-lg-3">
                                     <Button
                                         variant="secondary"
                                         className="ms-2" onClick={handleLogin}>Login<span className="ms-2">{loginIcon}</span></Button>

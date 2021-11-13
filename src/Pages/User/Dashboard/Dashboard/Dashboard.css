@@ -7,8 +7,6 @@
     transition: 0.3s;
 }
 .dash-nav a:hover {
-    /* color: #4CAF50;
-    background-color: #EEE; */
     color: #FFF;
     background-color: #333;
 }

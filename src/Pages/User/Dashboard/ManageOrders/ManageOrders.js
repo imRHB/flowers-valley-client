@@ -10,20 +10,6 @@ const ManageOrders = () => {
             .then(data => setOrders(data));
     }, [orders]);
 
-    const handleApproveOrder = (bqId) => {
-        fetch(`http://localhost:5000/orders/${bqId}`, {
-            method: 'PUT',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify({ status: 'Shipped' })
-        })
-            .then(res => res.json())
-            .then(data => {
-
-            })
-    };
-
     const handleDeleteOrder = bqId => {
         const deleteConfirmation = window.confirm('Do you want to delete the order?');
 
@@ -70,7 +56,7 @@ const ManageOrders = () => {
                                 <td>{order.displayName}</td>
                                 <td>{order.email}</td>
                                 <td>{order.status}</td>
-                                <td><Button onClick={() => handleApproveOrder(order._id)} variant="success" size="sm">APPROVE</Button> <Button onClick={() => handleDeleteOrder(order._id)} variant="danger" size="sm">DELETE</Button></td>
+                                <td><Button variant="success" size="sm">APPROVE</Button> <Button onClick={() => handleDeleteOrder(order._id)} variant="danger" size="sm">DELETE</Button></td>
                             </tr>)
                         }
                     </tbody>

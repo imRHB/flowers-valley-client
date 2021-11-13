@@ -14,14 +14,14 @@ const AddReview = () => {
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(data),
+            body: JSON.stringify(data)
         })
             .then(res => res.json())
             .then(result => {
 
             });
 
-        alert('Your review added successfully. Thanks for your review.');
+        alert('Your comment added successfully. Thanks for your comment.');
         reset();
     };
 
@@ -33,17 +33,19 @@ const AddReview = () => {
                 </div>
 
                 <div>
-                    <form onSubmit={handleSubmit(onSubmit)} className="pb-4 add-review-form">
-                        <input {...register("name", { required: true })} defaultValue={user.displayName} readOnly />
+                    <Container>
+                        <form onSubmit={handleSubmit(onSubmit)} className="pb-4 add-review-form">
+                            <input {...register("name", { required: true })} defaultValue={user.displayName} readOnly />
 
-                        <input {...register("email", { required: true })} defaultValue={user.email} readOnly />
+                            <input {...register("email", { required: true })} defaultValue={user.email} readOnly />
 
-                        <textarea {...register("comment", { required: true })} placeholder="Your comment" />
+                            <textarea {...register("comment", { required: true })} placeholder="Your comment" />
 
-                        <input type="number" {...register("rating", { min: 1, max: 5, required: true })} placeholder="Rate between 1 - 5" />
+                            <input type="number" {...register("rating", { min: 1, max: 5, required: true })} placeholder="Rate between 1 - 5" />
 
-                        <input type="submit" value="Add Review" className="btn btn-secondary" />
-                    </form>
+                            <input type="submit" value="Add Review" className="btn btn-secondary" />
+                        </form>
+                    </Container>
                 </div>
             </Container>
         </div>

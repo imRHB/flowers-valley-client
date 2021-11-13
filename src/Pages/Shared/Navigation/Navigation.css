@@ -1,6 +1,5 @@
 .navbar {
     padding: 0;
-    /* background-color: #2C3E50; */
 }
 .navbar-nav a {
     font-size: 18px;
@@ -10,15 +9,6 @@
     padding: 8px 12px;
 }
 .navbar-nav a:hover {
-    /* color: #ADD8E6; */
+    color: #8A2BE2;
     background-color: #eee;
 }
-/* .btn-fvs {
-    border: none;
-    color: #FFF;
-    background-color: #F63E7B;
-}
-.btn-fvs:hover {
-    background-color: #F63E7B;
-    opacity: 0.85;
-} */

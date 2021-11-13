@@ -21,7 +21,7 @@ const Banner = () => {
             <Container>
                 <div className="banner-title">
                     <div className="text-center">
-                        <p className="fs-1 fw-bold">Flowers Valley is famous for only <span className="text-danger">Rose Bouquet</span></p>
+                        <p className="fs-1 fw-bold"><span className="text-danger">Flowers Valley</span> is famous for only <span className="text-warning">Rose Bouquet</span></p>
 
                         <p className="fs-4 fw-bold">You can find many kinds of Rose Bouquet for different occasions</p>
 

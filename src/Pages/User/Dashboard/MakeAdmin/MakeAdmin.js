@@ -14,7 +14,7 @@ const MakeAdmin = () => {
 
         const user = { email };
 
-        const confirmToAddAdmin = window.confirm('Do you want to add a new admin?');
+        const confirmToAddAdmin = window.confirm(`Do you want to add "${email}" as admin?`);
 
         if (confirmToAddAdmin) {
             fetch('http://localhost:5000/users/admin', {
@@ -26,12 +26,17 @@ const MakeAdmin = () => {
             })
                 .then(res => res.json())
                 .then(data => {
+                    console.log(data);
+
                     if (data.modifiedCount) {
-                        alert('New admin added successfully.');
+                        alert(`"${email}" successfully added as admin.`);
                         setSuccess(true);
                     }
+                    else if (data.matchedCount) {
+                        alert(`"${email}" already added as admin.`);
+                    }
                     else {
-                        alert('Email address not found on the server');
+                        alert(`No user exists in database with "${email}".`);
                     }
                 })
         }
