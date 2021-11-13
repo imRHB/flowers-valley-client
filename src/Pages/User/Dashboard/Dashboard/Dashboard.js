@@ -36,19 +36,24 @@ const Dashboard = () => {
                         <Col xs={12} sm={12} md={4} lg={3} xl={3}>
                             <div className="bg-light rounded-3 py-4 border" style={{ minHeight: '80vh', position: 'sticky', top: '114px' }}>
                                 <Nav variant="light" className="flex-column dash-nav">
-                                    <Link to={`${url}`}><span className="me-3">{dashboardIcon}</span>Dashboard</Link>
-                                    <Link to={`${url}/my-order`}><span className="me-3">{listIcon}</span>My Order</Link>
-                                    <Link to={`${url}/payment`}><span className="me-3">{paymentIcon}</span>Payment</Link>
-                                    <Link to={`${url}/add-review`}><span className="me-3">{reviewIcon}</span>Add Review</Link>
                                     {
-                                        admin && <>
+                                        admin ? <>
+                                            <Link to={`${url}`}><span className="me-3">{dashboardIcon}</span>Dashboard</Link>
                                             <Link to={`${url}/manage-orders`}><span className="me-3">{serviceIcon}</span>Manage Orders</Link>
                                             <Link to={`${url}/manage-products`}><span className="me-3">{serviceIcon}</span>Manage Products</Link>
                                             <Link to={`${url}/add-product`}><span className="me-3">{plusIcon}</span>Add Product</Link>
                                             <Link to={`${url}/add-admin`}><span className="me-2">{userPlus}</span>Add Admin</Link>
+                                            <Link to='/login' className="" onClick={logout}><span className="me-3">{logoutIcon}</span>Logout</Link>
                                         </>
+                                            :
+                                            <>
+                                                <Link to={`${url}`}><span className="me-3">{dashboardIcon}</span>Dashboard</Link>
+                                                <Link to={`${url}/my-order`}><span className="me-3">{listIcon}</span>My Order</Link>
+                                                <Link to={`${url}/payment`}><span className="me-3">{paymentIcon}</span>Payment</Link>
+                                                <Link to={`${url}/add-review`}><span className="me-3">{reviewIcon}</span>Add Review</Link>
+                                                <Link to='/login' className="" onClick={logout}><span className="me-3">{logoutIcon}</span>Logout</Link>
+                                            </>
                                     }
-                                    <Link to='/login' className="" onClick={logout}><span className="me-3">{logoutIcon}</span>Logout</Link>
                                 </Nav>
                             </div>
                         </Col>
