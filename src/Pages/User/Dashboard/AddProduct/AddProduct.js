@@ -18,6 +18,7 @@ const AddProduct = () => {
             .then(result => {
 
             });
+
         alert('New Bouquet added successfully');
         reset();
     };
@@ -29,8 +30,8 @@ const AddProduct = () => {
                     <h3 className="fw-bold">Add Bouquet</h3>
                 </div>
 
-                <div className="container bg-light">
-                    <form onSubmit={handleSubmit(onSubmit)} className="pb-4 add-package-form">
+                <div className="container">
+                    <form onSubmit={handleSubmit(onSubmit)} className="pb-4 add-product-form">
                         <input {...register("title", { required: true })} placeholder="Bouquet title" />
 
                         <input {...register("img", { required: true })} placeholder="Insert direct image URL" />
@@ -39,7 +40,7 @@ const AddProduct = () => {
 
                         <input type="number" {...register("price", { required: true })} placeholder="Bouquet price" />
 
-                        <input type="submit" value="Add New Bouquet" className="btn btn-primary" />
+                        <input type="submit" value="Add New Bouquet" className="btn btn-secondary" />
                     </form>
                 </div>
             </Container>

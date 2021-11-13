@@ -25,9 +25,9 @@ const Dashboard = () => {
         <div>
             <Container fluid className="p-5">
                 <Tab.Container id="left-tabs-example" defaultActiveKey="my-order">
-                    <Row>
-                        <Col sm={3}>
-                            <div className="bg-light rounded-3 py-3" style={{ minHeight: '80vh', position: 'sticky', top: '48px' }}>
+                    <Row xs={1} sm={1} md={2} lg={2} xl={2}>
+                        <Col xs={12} sm={12} md={4} lg={3} xl={3}>
+                            <div className="bg-light rounded-3 py-4 border" style={{ minHeight: '80vh', position: 'sticky', top: '114px' }}>
                                 <Nav variant="" className="flex-column dash-nav">
                                     <Nav.Item>
                                         <Nav.Link
@@ -63,15 +63,15 @@ const Dashboard = () => {
                                     <Nav.Item>
                                         <Nav.Link
                                             className="dash-nav-link"
-                                            eventKey="make-admin">
-                                            <span className="me-2">{userPlus}</span>Make Admin</Nav.Link>
+                                            eventKey="add-admin">
+                                            <span className="me-2">{userPlus}</span>Add Admin</Nav.Link>
                                     </Nav.Item>
                                 </Nav>
                             </div>
                         </Col>
 
-                        <Col sm={9}>
-                            <div className="bg-light rounded-3 p-3">
+                        <Col xs={12} sm={12} md={8} lg={9} xl={9}>
+                            <div className="bg-light rounded-3 px-2 py-4 border">
                                 <Tab.Content>
                                     <Tab.Pane eventKey="my-order">
                                         <MyOrder></MyOrder>
@@ -88,7 +88,7 @@ const Dashboard = () => {
                                     <Tab.Pane eventKey="manage-orders">
                                         <ManageOrders></ManageOrders>
                                     </Tab.Pane>
-                                    <Tab.Pane eventKey="make-admin">
+                                    <Tab.Pane eventKey="add-admin">
                                         <MakeAdmin></MakeAdmin>
                                     </Tab.Pane>
                                 </Tab.Content>

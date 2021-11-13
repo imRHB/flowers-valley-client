@@ -47,6 +47,7 @@ const MyOrder = () => {
                             <th>Action</th>
                         </tr>
                     </thead>
+
                     <tbody>
                         {
                             orders.map((order, index) => <tr>

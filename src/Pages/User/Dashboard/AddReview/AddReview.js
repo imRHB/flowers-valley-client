@@ -2,6 +2,7 @@ import React from 'react';
 import { Container } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import useAuth from '../../../../hooks/useAuth';
+import './AddReview.css';
 
 const AddReview = () => {
     const { user } = useAuth();
@@ -32,7 +33,7 @@ const AddReview = () => {
                 </div>
 
                 <div>
-                    <form onSubmit={handleSubmit(onSubmit)} className="pb-4 add-package-form">
+                    <form onSubmit={handleSubmit(onSubmit)} className="pb-4 add-review-form">
                         <input {...register("name", { required: true })} defaultValue={user.displayName} readOnly />
 
                         <input {...register("email", { required: true })} defaultValue={user.email} readOnly />
@@ -41,7 +42,7 @@ const AddReview = () => {
 
                         <input type="number" {...register("rating", { min: 1, max: 5, required: true })} placeholder="Rate between 1 - 5" />
 
-                        <input type="submit" value="Add Review" className="btn btn-primary" />
+                        <input type="submit" value="Add Review" className="btn btn-secondary" />
                     </form>
                 </div>
             </Container>

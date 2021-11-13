@@ -66,16 +66,6 @@ const Registration = () => {
                                 placeholder="Name" />
                         </FloatingLabel>
 
-                        {/* 
-                    <FloatingLabel
-                        controlId="floatingInput"
-                        label="Last Name"
-                        className="mb-3"
-                    >
-                        <Form.Control type="text" placeholder="Last Name" />
-                    </FloatingLabel>
-                     */}
-
                         <FloatingLabel
                             controlId="floatingInput"
                             label="Email Address"
@@ -143,23 +133,6 @@ const Registration = () => {
                     </div>
                 }
             </div>
-
-            {
-                !loading && <Container
-                    className="text-center my-5 form-container-ext"
-                >
-                    {/* <div className="">
-                        <p>- or -</p>
-                    </div> */}
-                    {/* <Button
-                        onClick={signInWithGoogle}
-                        className="my-2 login-btn"
-                    ><span
-                        className="me-4 social-icon"
-                    >{googleIcon}
-                        </span> Continue with Google</Button> */}
-                </Container>
-            }
         </div>
     );
 };

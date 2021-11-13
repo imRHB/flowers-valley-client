@@ -15,7 +15,7 @@ const Testimonials = () => {
         <div className="bg-light py-5">
             <h2 className="text-center fs-1 fw-bold text-secondary my-5">Testimonials</h2>
             <Container>
-                <Row xs={1} md={2} lg={3} xl={3} className="pb-5 g-5">
+                <Row xs={1} md={2} lg={3} xl={3} className="g-5 g-lg-4 g-xl-5">
                     {
                         reviews.map(review => <Testimonial
                             key={review._id}

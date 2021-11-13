@@ -3,11 +3,11 @@ import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { useHistory } from 'react-router';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSignInAlt, faSignOutAlt, faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import './Navigation.css';
 
 import logo from '../../../images/logo.png';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSignInAlt, faSignOutAlt, faUserCircle } from '@fortawesome/free-solid-svg-icons';
 
 const userIcon = <FontAwesomeIcon icon={faUserCircle} />;
 const logoutIcon = <FontAwesomeIcon icon={faSignOutAlt} />;
@@ -23,7 +23,7 @@ const Navigation = () => {
     };
 
     return (
-        <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+        <Navbar collapseOnSelect expand="lg" bg="light" variant="light" sticky="top">
             <Container>
                 <Navbar.Brand>
                     <img src={logo} alt="" style={{ width: 'auto', height: '56px', padding: '4px' }} />

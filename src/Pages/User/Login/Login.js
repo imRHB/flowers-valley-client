@@ -89,14 +89,6 @@ const Login = () => {
                     </div>
 
                     <div className="my-4">
-                        {/* <Button
-                            onClick={signInWithGoogle}
-                            className="my-3 login-btn"
-                        ><span
-                            className="me-4 social-icon"
-                        >{googleIcon}
-                            </span> Continue with Google</Button> */}
-
                         <p>Don't have an account? <Link
                             to="/register"
                             className="user-toggle">

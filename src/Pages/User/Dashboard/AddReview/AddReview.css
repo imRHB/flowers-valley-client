@@ -1,10 +1,10 @@
-.add-product-form {
+.add-review-form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.add-product-form input, textarea {
+.add-review-form input, textarea {
     width: 360px;
     margin: 8px;
     padding: 4px;

@@ -29,7 +29,7 @@ const ManageOrders = () => {
         <div>
             <Container>
                 <div className="mb-4">
-                    <h3 className="fw-bold">Manage Services</h3>
+                    <h3 className="fw-bold">Manage Orders</h3>
                 </div>
 
                 <Table responsive hover size="sm">
@@ -44,6 +44,7 @@ const ManageOrders = () => {
                             <th>Action</th>
                         </tr>
                     </thead>
+
                     <tbody>
                         {
                             orders.map((order, index) => <tr>

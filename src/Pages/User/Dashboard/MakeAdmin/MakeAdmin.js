@@ -22,7 +22,7 @@ const MakeAdmin = () => {
         <div>
             <Container>
                 <div className="mb-4">
-                    <h3 className="fw-bold">Make Admin</h3>
+                    <h3 className="fw-bold">Add New Admin</h3>
                 </div>
 
                 <Form onSubmit={handleMakeAdmin}>
@@ -37,9 +37,9 @@ const MakeAdmin = () => {
 
                     <Button
                         type="submit"
-                        className=""
+                        variant="dark"
                     >
-                        Add as Admin
+                        Add Admin
                     </Button>
                 </Form>
             </Container>

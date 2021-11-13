@@ -5,6 +5,7 @@ import FeaturedOccasions from '../FeaturedOccasions/FeaturedOccasions';
 import Testimonials from '../Testimonials/Testimonials/Testimonials';
 
 const Home = () => {
+
     return (
         <div className="">
             <Banner></Banner>

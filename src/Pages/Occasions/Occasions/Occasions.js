@@ -23,7 +23,7 @@ const Occasions = () => {
                 </div>
 
                 <div className="my-5">
-                    <Row xs={1} sm={1} md={2} lg={3} xl={3} className="my-5 g-5">
+                    <Row xs={1} sm={1} md={2} lg={2} xl={3} className="g-5 g-md-4 g-lg-5">
                         {
                             occasions.map(occasion => <Occasion
                                 key={occasion._id}

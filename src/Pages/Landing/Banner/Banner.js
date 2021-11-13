@@ -20,13 +20,13 @@ const Banner = () => {
         <div className="banner" style={bannerBg}>
             <Container>
                 <div className="banner-title">
-                    <div className="text-dark title">
-                        <p className="fs-1 fw-bold">Flowers Valley is famous for only <span className="text-danger">Rose Bouquet</span>.</p>
+                    <div className="text-center">
+                        <p className="fs-1 fw-bold">Flowers Valley is famous for only <span className="text-danger">Rose Bouquet</span></p>
 
-                        <p className="fs-3 fw-bold text-dark">You can find many kinds of Rose Bouquet for different occasions.</p>
+                        <p className="fs-4 fw-bold">You can find many kinds of Rose Bouquet for different occasions</p>
 
                         <Link to="/rose-bouquet">
-                            <Button variant="dark">Explore More</Button>
+                            <Button variant="danger">Explore More</Button>
                         </Link>
                     </div>
                 </div>
