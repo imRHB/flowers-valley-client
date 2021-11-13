@@ -10,8 +10,8 @@ import './Navigation.css';
 import logo from '../../../images/logo.png';
 
 const userIcon = <FontAwesomeIcon icon={faUserCircle} />;
-const logoutIcon = <FontAwesomeIcon icon={faSignOutAlt} />;
 const loginIcon = <FontAwesomeIcon icon={faSignInAlt} />;
+const logoutIcon = <FontAwesomeIcon icon={faSignOutAlt} />;
 
 const Navigation = () => {
     const { user, logout } = useAuth();

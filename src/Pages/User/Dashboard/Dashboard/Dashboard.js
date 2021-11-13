@@ -1,5 +1,5 @@
 import { faCommentAlt } from '@fortawesome/free-regular-svg-icons';
-import { faMoneyCheckAlt, faPlus, faTh, faThLarge, faThList, faUserPlus } from '@fortawesome/free-solid-svg-icons';
+import { faMoneyCheckAlt, faPlus, faSignOutAlt, faTh, faThLarge, faThList, faUserPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Switch, Route, useRouteMatch, Link } from 'react-router-dom';
@@ -12,6 +12,8 @@ import MyOrder from '../MyOrder/MyOrder';
 import Payment from '../Payment/Payment';
 
 import './Dashboard.css';
+import useAuth from '../../../../hooks/useAuth';
+import AdminRoute from '../../Login/AdminRoute/AdminRoute';
 
 const dashboardIcon = <FontAwesomeIcon icon={faTh} />;
 const reviewIcon = <FontAwesomeIcon icon={faCommentAlt} />;
@@ -20,9 +22,11 @@ const plusIcon = <FontAwesomeIcon icon={faPlus} />;
 const userPlus = <FontAwesomeIcon icon={faUserPlus} />;
 const serviceIcon = <FontAwesomeIcon icon={faThLarge} />;
 const paymentIcon = <FontAwesomeIcon icon={faMoneyCheckAlt} />;
+const logoutIcon = <FontAwesomeIcon icon={faSignOutAlt} />;
 
 const Dashboard = () => {
     let { path, url } = useRouteMatch();
+    const { user, admin, logout } = useAuth();
 
     return (
         <div>
@@ -36,9 +40,14 @@ const Dashboard = () => {
                                     <Link to={`${url}/my-order`}><span className="me-3">{listIcon}</span>My Order</Link>
                                     <Link to={`${url}/payment`}><span className="me-3">{paymentIcon}</span>Payment</Link>
                                     <Link to={`${url}/add-review`}><span className="me-3">{reviewIcon}</span>Add Review</Link>
-                                    <Link to={`${url}/manage-orders`}><span className="me-3">{serviceIcon}</span>Manage Orders</Link>
-                                    <Link to={`${url}/add-product`}><span className="me-3">{plusIcon}</span>Add Product</Link>
-                                    <Link to={`${url}/add-admin`}><span className="me-3">{userPlus}</span>Add Admin</Link>
+                                    {
+                                        admin && <>
+                                            <Link to={`${url}/manage-orders`}><span className="me-3">{serviceIcon}</span>Manage Orders</Link>
+                                            <Link to={`${url}/add-product`}><span className="me-3">{plusIcon}</span>Add Product</Link>
+                                            <Link to={`${url}/add-admin`}><span className="me-2">{userPlus}</span>Add Admin</Link>
+                                        </>
+                                    }
+                                    <Link to='/login' onClick={logout}><span className="me-3">{logoutIcon}</span>Logout</Link>
                                 </Nav>
                             </div>
                         </Col>
@@ -47,7 +56,9 @@ const Dashboard = () => {
                             <div className="bg-light rounded-3 px-2 py-4 border">
                                 <Switch>
                                     <Route exact path={path}>
-                                        <h2>Welcome to Flowers Valley Dashboard</h2>
+                                        <div>
+                                            <h2 className="fw-bold">Hello <span className="text-secondary">{user.displayName}</span>!</h2>
+                                        </div>
                                     </Route>
                                     <Route path={`${path}/my-order`}>
                                         <MyOrder></MyOrder>
@@ -58,15 +69,15 @@ const Dashboard = () => {
                                     <Route path={`${path}/add-review`}>
                                         <AddReview></AddReview>
                                     </Route>
-                                    <Route path={`${path}/manage-orders`}>
+                                    <AdminRoute path={`${path}/manage-orders`}>
                                         <ManageOrders></ManageOrders>
-                                    </Route>
-                                    <Route path={`${path}/add-product`}>
+                                    </AdminRoute>
+                                    <AdminRoute path={`${path}/add-product`}>
                                         <AddProduct></AddProduct>
-                                    </Route>
-                                    <Route path={`${path}/add-admin`}>
+                                    </AdminRoute>
+                                    <AdminRoute path={`${path}/add-admin`}>
                                         <MakeAdmin></MakeAdmin>
-                                    </Route>
+                                    </AdminRoute>
                                 </Switch>
                             </div>
                         </Col>

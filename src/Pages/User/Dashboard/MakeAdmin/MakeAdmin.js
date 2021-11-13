@@ -3,6 +3,7 @@ import { Button, Container, Form } from 'react-bootstrap';
 
 const MakeAdmin = () => {
     const [email, setEmail] = useState({});
+    const [success, setSuccess] = useState(false);
 
     const handleOnBlur = e => {
         setEmail(e.target.value);
@@ -22,8 +23,9 @@ const MakeAdmin = () => {
         })
             .then(res => res.json())
             .then(data => {
-                if (data.modifiedCount === 1) {
+                if (data.modifiedCount) {
                     alert('New admin added successfully.');
+                    setSuccess(true);
                 }
                 else {
                     alert('Email address not found on the server');
