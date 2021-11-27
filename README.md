@@ -4,11 +4,11 @@ Flower is the sign of love and peace. Over the whole world `Rose` has a differen
 
 ## Project Overview
 
-- Huge Rose Boquet collection with cheap price
+- Users can check available Rose Bouquets
 - Exciting discount available depends on the specific occasion
 - After simple registration, place order is very easy
 - Registered user can track their order and able to cancel order
-- Continuously product update available by admin
+- Admin can manage orders, add product, and make anothe admin
 
 ### In this project -
 
