@@ -19,7 +19,7 @@ Flower is the sign of love and peace. Over the whole world `Rose` has a differen
 
 #### Server and API
 
-- [GitHub (Flowers Valley Server Side)](https://github.com/programming-hero-web-course-4/niche-website-server-side-imprantu)
+- [GitHub (Flowers Valley Server Side)](https://github.com/imRHB/flowers-valley-server)
 
 - [Server](https://quiet-peak-91569.herokuapp.com/)
 - [Bouquets](https://quiet-peak-91569.herokuapp.com/bouquets)
